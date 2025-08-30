@@ -1,0 +1,223 @@
+{
+  "ThreatName": "Privilege Escalation",
+  "ThreatID": "T.Pe.001",
+  "SubThreats": [
+    {
+      "ThreatName": "Abuse Elevation Control Mechanism",
+      "ThreatID": "T.Pe.002",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": "General knowledge of access control systems and the ability to identify the protocols being used by the vehicle is required for this type of attack"
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": "The access control systems of a vehicle are generally static, with only exploits being removed when found via patches. But the core framework generally remains the same"
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "An exploitation or improper use of a system that manages access privileges within the vehicles software or hardware",
+      "RefineThreatClass": "T.Pe.001, Privilege Escalation",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Exploit Co-Located Computing Device for Privilege Escalation",
+      "ThreatID": "T.Pe.003",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Given exploits for pre-existing devices may already be known, the attacker will only need to research how to use the device to gain access to their intended effect"
+        },
+        "SE": {
+          "description": "Knowledge of various types of devices that could be connected to a vehicle and how to exploit them is required for this attack to work"
+        },
+        "KoIC": {
+          "description": "Knowledge about specific information exchange protocols within the vehicle may benefit the attacker, but are generally not required for this attack"
+        },
+        "WoO": {
+          "description": "Generally these devices will always be connected to the vehicle when they are in operation; leaving a large window of time to be able to exploit them"
+        },
+        "Eq": {
+          "description": "Typically, only a standard computer is required to perform this attack"
+        }
+      },
+      "Description": "",
+      "RefineThreatClass": "T.Pe.001, Privilege Escalation",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Exploit OS Vulnerability",
+      "ThreatID": "T.Pe.004",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "A good amount of time is needed for the attacker to research the operating system and find potential exploits that they would benefit from"
+        },
+        "SE": {
+          "description": "High-level knowledge of operating systems and potential ways to exploit them are required for this attack"
+        },
+        "KoIC": {
+          "description": "This rating will change depending on the operating system that is used by the vehicle. If it is proprietary the attacker will need sensitive information in order to find exploits, but more public facing operating systems will require less insider information from the attacker"
+        },
+        "WoO": {
+          "description": "This rating depends on how often and well maintained the operating system is, but it is a surface that is always available for attack"
+        },
+        "Eq": {
+          "description": "Typically a standard computer is the only requirement, however some more specialized equipment might be required for finding exploits within the operating system"
+        }
+      },
+      "Description": "An attack that exploits vulnerabilities found within the operating system of the vehicle",
+      "RefineThreatClass": "T.Pe.001, Privilege Escalation",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Exploit TEE Vulnerability",
+      "ThreatID": "T.Pe.005",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "The attacker will need to spend some time researching the TEE of the vehicle to find potential exploits and ways to benefit from them"
+        },
+        "SE": {
+          "description": "General knowledge of trusted execution environments and their information flows is required for this attack"
+        },
+        "KoIC": {
+          "description": "The attacker would need some restricted information in order to achieve this attack, but this information could be found through trial and error/researching "
+        },
+        "WoO": {
+          "description": "The TEE is generally static, but depending on where the exploit exists the window of opportunity can shift"
+        },
+        "Eq": {
+          "description": "Specialized equipment will be required for performing this attack "
+        }
+      },
+      "Description": "An attack that exploits weaknesses within the trusted execution environment of a vehicle. This would allow the attacker to gain unauthorized access, manipulate sensitive data, or compromise vehicle systems",
+      "RefineThreatClass": "T.Pe.001, Privilege Escalation",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Hardware Fault Injection",
+      "ThreatID": "T.Pe.006",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "The attacker will need time to research the components used within the vehicle to find these exploits"
+        },
+        "SE": {
+          "description": "Deep knowledge of vehicle components and how to exploit them is required for this attack to function"
+        },
+        "KoIC": {
+          "description": "Internal knowledge of the vehicles architecture is required for this attack to function"
+        },
+        "WoO": {
+          "description": "The components will always be available as a surface"
+        },
+        "Eq": {
+          "description": "specialized equipment is required for this attack to function"
+        }
+      },
+      "Description": "An attack that manipulates faults within hardware components of a vehicles electronic systems PUM 4: HITRUST Threat Catalogue (2022) HITRUST Alliance. Available at: https://hitrustalliance.net/hitrust-threat-catalogue/ (Accessed: 30 October 2023).",
+      "RefineThreatClass": "T.Pe.001, Privilege Escalation",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Process Injection",
+      "ThreatID": "T.Pe.007",
+      "AttackFeasibilityLevel": "LOW",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Some time would be required for the attacker to understand the software/firmware of the vehicle, which is subject to change with updates"
+        },
+        "SE": {
+          "description": "Knowledge of ways to perform arbitrary code execution, and automotive systems is required for this type of attack to work"
+        },
+        "KoIC": {
+          "description": "Some knowledge of the operating system and firmware is required for this type of attack to work"
+        },
+        "WoO": {
+          "description": "While the surface for this attaack is always available, updates would make the window of opportunity smaller"
+        },
+        "Eq": {
+          "description": "While developing the code for the attack only requires a standard computer, delivering the payload to the vehicle will require more specialized equipment"
+        }
+      },
+      "Description": "An attacker injects or executes unauthorized code into a running process of the vehicle ",
+      "RefineThreatClass": "T.Pe.001, Privilege Escalation",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Reprogram Co-Located Computing Device for Privilege Escalation",
+      "ThreatID": "T.Pe.008",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Depending on the device, the co-located computing device will require less research than others to find an exploit that benefits the attacker"
+        },
+        "SE": {
+          "description": "The attacker will need to know how to exploit co-located computing devices"
+        },
+        "KoIC": {
+          "description": "Some information regarding the vehicles internal protocols is required for the attacker to benefit from their work, the initial exploits will require less proprietary knowledge"
+        },
+        "WoO": {
+          "description": "Depdning on the device, the attack surface for the co-located device will be available quite often"
+        },
+        "Eq": {
+          "description": "Typically, only a standard computer is required for this type of attack to work"
+        }
+      },
+      "Description": "An attacker modifies a co-located computing device within the vehicle to gain elevated privileges and unauthorized control over critical functions",
+      "RefineThreatClass": "T.Pe.001, Privilege Escalation",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    }
+  ]
+}

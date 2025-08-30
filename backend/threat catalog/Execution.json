@@ -1,0 +1,66 @@
+{
+  "ThreatName": "Execution",
+  "ThreatID": "T.Ex.001",
+  "SubThreats": [
+    {
+      "ThreatName": "Command and Scripting Interpreter",
+      "ThreatID": "T.Ex.002",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Research into the controls surrounding the command line interface must be done before this type of attack can succeed"
+        },
+        "SE": {
+          "description": "Knowledge of basic scripting and knowledge of how to gain access to the command-line for a vehicle is required "
+        },
+        "KoIC": {
+          "description": "The attacker must know some of the controls and coding vulnerabilities of the vehicle for the attack to work"
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": "A simple computer is required for this attack"
+        }
+      },
+      "Description": "An attacker uses a tool to interact with and control the operations of vehicle systems through a command-line interface",
+      "RefineThreatClass": "T.Ex.001, Execution",
+      "SecurityProperties": {
+        "Authenticity": true,
+        "Integrity": true,
+        "Confidentiality": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Native API",
+      "ThreatID": "T.Ex.003",
+      "AttackFeasibilityLevel": "LOW",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Spoofing the API authentication is required for this attack to work and that would take time to find vulnerabilities and implement them. This category is largely dependent on if secure coding practices were used during its creation"
+        },
+        "SE": {
+          "description": "General programming knowledge and how to access confidential APIs is required for this attack"
+        },
+        "KoIC": {
+          "description": "The attacker must have knowledge of the API itself, and how to access it and bypass the authentication and logs in order to be successful"
+        },
+        "WoO": {
+          "description": "The native API is an attack surface that is always available"
+        },
+        "Eq": {
+          "description": "A standard computer is required for this attack"
+        }
+      },
+      "Description": "A type of attack where a malicious party gains access to the Native API of a vehicle. With this, the attacker could gain confidential information, disrupt the function of systems, or have the vehicle accept faulty information",
+      "RefineThreatClass": "T.Ex.001, Execution",
+      "SecurityProperties": {
+        "Authenticity": true,
+        "Integrity": true,
+        "Confidentiality": true
+      },
+      "ActsOn": ""
+    }
+  ]
+}

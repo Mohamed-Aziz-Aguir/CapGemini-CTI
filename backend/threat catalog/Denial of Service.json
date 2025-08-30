@@ -1,0 +1,230 @@
+{
+  "ThreatName": "Denial of Service",
+  "ThreatID": "T.D.000",
+  "SubThreats": [
+    {
+      "ThreatName": "Disrupt transmission (wireless)",
+      "ThreatID": "T.D.001",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "",
+      "RefineThreatClass": "T.D.000, Denial of Service",
+      "SecurityProperties": {
+        "Availability": true
+      },
+      "ActsOn": "Channel, DataFlow"
+    },
+    {
+      "ThreatName": "Disrupt transmission (wired)",
+      "ThreatID": "T.D.002",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "",
+      "RefineThreatClass": "T.D.000, Denial of Service",
+      "SecurityProperties": {
+        "Availability": true
+      },
+      "ActsOn": "Channel, DataFlow"
+    },
+    {
+      "ThreatName": "Disrupt computation",
+      "ThreatID": "T.D.003",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "",
+      "RefineThreatClass": "T.D.000, Denial of Service",
+      "SecurityProperties": {
+        "Availability": true
+      },
+      "ActsOn": "Channel, DataFlow"
+    },
+    {
+      "ThreatName": "Flooding",
+      "ThreatID": "T.D.004",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "",
+      "RefineThreatClass": "T.D.000, Denial of Service",
+      "SecurityProperties": {
+        "Availability": true
+      },
+      "ActsOn": "Channel, DataFlow"
+    },
+    {
+      "ThreatName": "Jamming",
+      "ThreatID": "T.D.005",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "",
+      "RefineThreatClass": "T.D.000, Denial of Service",
+      "SecurityProperties": {
+        "Availability": true
+      },
+      "ActsOn": "Channel, DataFlow"
+    },
+    {
+      "ThreatName": "GPS jamming",
+      "ThreatID": "T.D.006",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "",
+      "RefineThreatClass": "T.D.000, Denial of Service",
+      "SecurityProperties": {
+        "Availability": true
+      },
+      "ActsOn": "Channel, DataFlow"
+    },
+    {
+      "ThreatName": "Excessive Allocation of Resources",
+      "ThreatID": "T.D.007",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "",
+      "RefineThreatClass": "T.D.000, Denial of Service",
+      "SecurityProperties": {
+        "Availability": true
+      },
+      "ActsOn": "Component"
+    },
+    {
+      "ThreatName": "Resource Leak Exposure and Depletion",
+      "ThreatID": "T.D.008",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "",
+      "RefineThreatClass": "T.D.000, Denial of Service",
+      "SecurityProperties": {
+        "Availability": true
+      },
+      "ActsOn": "Component"
+    }
+  ]
+}

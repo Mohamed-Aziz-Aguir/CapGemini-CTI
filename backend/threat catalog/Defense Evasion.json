@@ -1,0 +1,130 @@
+{
+  "ThreatName": "Defense Evasion",
+  "ThreatID": "T.De.001",
+  "SubThreats": [
+    {
+      "ThreatName": "Bypass Code Signing",
+      "ThreatID": "T.De.002",
+      "AttackFeasibilityLevel": "LOW",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Time researching the signing mechanism s of the vehicle are required for this type of attack"
+        },
+        "SE": {
+          "description": "Knowledge of arbitrary code execution, and the current signing mechanisms of the vehicle is required for this type of attack"
+        },
+        "KoIC": {
+          "description": "Knowledge of the internal signing mechanisms and their weaknesses are required for this type of attack to work"
+        },
+        "WoO": {
+          "description": "Depending on when the signing mechanisms are called, the attack surface may be less available"
+        },
+        "Eq": {
+          "description": "Only a standard computer to generate the code is required for this type of attack to function"
+        }
+      },
+      "Description": "An attacker bypasses the code signing mechanism implemented within the software of a vehicle's electronic systems. This attack is designed to execute unauthorized code without being detected",
+      "RefineThreatClass": "T.De.001, Defense Evasion",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Disable Firewall",
+      "ThreatID": "T.De.003",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Depending on the type of firewall used, it may take more or less time to find beneficial exploits for the attacker"
+        },
+        "SE": {
+          "description": "Knowledge of firewall protocols and ways to circumvent them are required for this type of attack to function"
+        },
+        "KoIC": {
+          "description": "General information on firewalls is readily available, but the exact implementation may require some insider knowledge that could be discovered through trial and error on the end of the attacker"
+        },
+        "WoO": {
+          "description": "Generally, this attack surface is readily available for the attacker"
+        },
+        "Eq": {
+          "description": "Only a standard computer is required for this type of attack"
+        }
+      },
+      "Description": "An attack that is designed to bypass the firewall protection implemented within the vehicle's electronic systems",
+      "RefineThreatClass": "T.De.001, Defense Evasion",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Bypass UDS Security Access",
+      "ThreatID": "T.De.004",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "information regarding the UDS protocol and potential exploits are readily available information"
+        },
+        "SE": {
+          "description": "Knowledge of the UDS protocol and how to circumvent it is required"
+        },
+        "KoIC": {
+          "description": "Information regarding UDS protocols are readily available"
+        },
+        "WoO": {
+          "description": "Access to the UDS surface requires physical access to the vehicle, making the surface more difficult to access to the attacker"
+        },
+        "Eq": {
+          "description": "Only a computer and a device designed to read/write to UDS is required for this attack"
+        }
+      },
+      "Description": "An attack that circumvents the security access provided by the universal diagnostic service to gain unauthorized access to sensitive information and execute unauthorized diagnostic commands",
+      "RefineThreatClass": "T.De.001, Defense Evasion",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Bypass Mandatory Access Control",
+      "ThreatID": "T.De.005",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Time spent researching the MAC protocols used by the vehicle are required for the attack to function"
+        },
+        "SE": {
+          "description": "Knowledge of MAC policies and operating systems is required for this type of attack to function"
+        },
+        "KoIC": {
+          "description": "Knowledge regarding the MAC policies used by the vehicle is required for this attack to be successful"
+        },
+        "WoO": {
+          "description": "The MAC protocols and operating systems are generally available to the attacker"
+        },
+        "Eq": {
+          "description": "Some specialized equipment is required to discover MAC vulnerabilities"
+        }
+      },
+      "Description": "An attack that circumvents MAC protocols within a vehicle's operating system",
+      "RefineThreatClass": "T.De.001, Defense Evasion",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    }
+  ]
+}

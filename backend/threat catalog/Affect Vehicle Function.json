@@ -1,0 +1,192 @@
+{
+  "ThreatName": "Affect Vehicle Function",
+  "ThreatID": "T.Avf.001",
+  "SubThreats": [
+    {
+      "ThreatName": "Adversarial Machine Learning",
+      "ThreatID": "T.Avf.002",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "",
+      "RefineThreatClass": "T.Avf.001, Affect Vehicle Function",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Abuse UDS for Affecting Vehicle Function",
+      "ThreatID": "T.Avf.003",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "",
+      "RefineThreatClass": "T.Avf.001, Affect Vehicle Function",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "CAN Bus Denial of Service",
+      "ThreatID": "T.Avf.004",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "",
+      "RefineThreatClass": "T.Avf.001, Affect Vehicle Function",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Local Function",
+      "ThreatID": "T.Avf.005",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "",
+      "RefineThreatClass": "T.Avf.001, Affect Vehicle Function",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Modify Bus Message",
+      "ThreatID": "T.Avf.006",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "",
+      "RefineThreatClass": "T.Avf.001, Affect Vehicle Function",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Unintended Vehicle Network Message",
+      "ThreatID": "T.Avf.007",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "",
+      "RefineThreatClass": "T.Avf.001, Affect Vehicle Function",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    }
+  ]
+}

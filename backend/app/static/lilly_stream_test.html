@@ -1,0 +1,185 @@
+<!-- app/static/lilly_stream_test.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Lilly Streaming Test (single-line, fixed buttons)</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    #output {
+      border: 1px solid #ccc;
+      padding: 10px;
+      height: 100px;
+      overflow-x: auto;
+      white-space: nowrap; /* single-line output */
+      font-family: Menlo, monospace;
+      background: #fafafa;
+    }
+    input#prompt { width: 65%; padding: 8px; font-size: 14px; }
+    button { padding: 8px 12px; margin-left: 6px; font-size: 14px; }
+    .meta { color: #666; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <h3>Lilly Streaming Test (single-line, fixed)</h3>
+  <div class="meta">Attempts endpoints <code>/api/lilly/chat</code> then fallback <code>/api/lilly/lilly/chat</code> if needed.</div>
+
+  <input id="prompt" placeholder="Type prompt here (press Enter or Send)"/>
+  <button id="sendBtn">Send</button>
+  <button id="clearBtn">Clear Memory</button>
+
+  <div id="output" aria-live="polite"></div>
+
+  <script>
+    const promptInput = document.getElementById('prompt');
+    const sendBtn = document.getElementById('sendBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const output = document.getElementById('output');
+
+    // Primary and fallback endpoint paths (handles both router configurations)
+    const CHAT_PATHS = ['/api/lilly/chat?stream=true', '/api/lilly/lilly/chat?stream=true'];
+    const CLEAR_PATHS = ['/api/lilly/clear', '/api/lilly/lilly/clear'];
+
+    function appendUser(text) {
+      output.textContent += `You: ${text} | Lilly: `;
+      output.scrollLeft = output.scrollWidth;
+    }
+
+    async function tryFetchStreaming(path) {
+      // Returns Response or throws
+      const res = await fetch(path, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        // body will be set by caller via separate fetch call wrapper
+      });
+      return res;
+    }
+
+    async function streamPostWithFallback(paths, bodyObj) {
+      // Try each path in order. For streaming we must call fetch and handle response.status.
+      for (const path of paths) {
+        try {
+          const res = await fetch(path, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(bodyObj)
+          });
+
+          if (res.status === 404) {
+            // try next path
+            continue;
+          }
+
+          if (!res.ok) {
+            // non-404 error: read text and throw
+            const txt = await res.text().catch(() => `HTTP ${res.status}`);
+            throw new Error(`HTTP ${res.status}: ${txt}`);
+          }
+
+          // Good response — stream it
+          if (!res.body) {
+            // no streaming body
+            const txt = await res.text().catch(() => '');
+            output.textContent += ` [no stream body: ${txt}] `;
+            return;
+          }
+
+          const reader = res.body.getReader();
+          const decoder = new TextDecoder('utf-8');
+
+          // Read and append incremental data (backend yields incremental deltas)
+          while (true) {
+            const { value, done } = await reader.read();
+            if (done) break;
+            if (value) {
+              const chunk = decoder.decode(value);
+              // The backend sends cleaned incremental deltas; append directly.
+              // Remove any accidental "data:" prefixes if present.
+              const clean = chunk.replace(/^data:\s*/g, '');
+              output.textContent += clean;
+              output.scrollLeft = output.scrollWidth;
+            }
+          }
+
+          // finished streaming for this path
+          output.textContent += ' ';
+          output.scrollLeft = output.scrollWidth;
+          return;
+
+        } catch (err) {
+          // If this was the last path, rethrow so caller can show error
+          if (paths.indexOf(path) === paths.length - 1) throw err;
+          // otherwise continue to next fallback path
+        }
+      }
+
+      // If we exit loop without returning, none of the paths succeeded
+      throw new Error('All endpoints returned 404 or failed');
+    }
+
+    async function clearWithFallback(paths) {
+      for (const path of paths) {
+        try {
+          const res = await fetch(path, { method: 'POST' });
+          if (res.status === 404) continue;
+          if (!res.ok) {
+            const txt = await res.text().catch(() => `HTTP ${res.status}`);
+            throw new Error(`HTTP ${res.status}: ${txt}`);
+          }
+          // success
+          return true;
+        } catch (err) {
+          if (paths.indexOf(path) === paths.length - 1) throw err;
+        }
+      }
+      throw new Error('All clear endpoints failed');
+    }
+
+    sendBtn.addEventListener('click', async () => {
+      const prompt = promptInput.value.trim();
+      if (!prompt) return;
+      appendUser(prompt);
+      promptInput.value = '';
+      promptInput.disabled = true;
+      sendBtn.disabled = true;
+      clearBtn.disabled = true;
+
+      try {
+        await streamPostWithFallback(CHAT_PATHS, { message: prompt });
+      } catch (err) {
+        console.error(err);
+        output.textContent += ` [stream error: ${err.message || err}] `;
+        output.scrollLeft = output.scrollWidth;
+      } finally {
+        promptInput.disabled = false;
+        sendBtn.disabled = false;
+        clearBtn.disabled = false;
+        promptInput.focus();
+      }
+    });
+
+    promptInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') sendBtn.click();
+    });
+
+    clearBtn.addEventListener('click', async () => {
+      clearBtn.disabled = true;
+      sendBtn.disabled = true;
+      promptInput.disabled = true;
+      try {
+        await clearWithFallback(CLEAR_PATHS);
+        output.textContent = '';
+      } catch (err) {
+        console.error('Clear error', err);
+        output.textContent += ` [clear error: ${err.message || err}] `;
+      } finally {
+        clearBtn.disabled = false;
+        sendBtn.disabled = false;
+        promptInput.disabled = false;
+        promptInput.focus();
+      }
+    });
+  </script>
+</body>
+</html>
+

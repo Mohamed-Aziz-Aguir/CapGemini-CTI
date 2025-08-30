@@ -1,0 +1,208 @@
+{
+  "ThreatName": "Spoofing",
+  "ThreatID": "T.S.000",
+  "SubThreats": [
+    {
+      "ThreatName": "identity spoofing to an asset using",
+      "ThreatID": "T.S.001",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": "Require Knowledge about the security behaviour of the product or system type."
+        },
+        "KoIC": {
+          "description": "Requires knowledge about the asset to perform the attack that might be restricted to the product owner"
+        },
+        "WoO": {
+          "description": "Always available without any time limitation"
+        },
+        "Eq": {
+          "description": "Equipment is readily available. May need only a laptop"
+        }
+      },
+      "Description": "Identity spoofing of an asset using login and password refers to a deceptive practice in which an attacker impersonates a legitimate user by using their stolen or forged login credentials to gain unauthorized access to an asset",
+      "RefineThreatClass": "T.S.000, Spoofing",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Authenticity": true
+      },
+      "ActsOn": "Component"
+    },
+    {
+      "ThreatName": "Software package are not from an authorized source",
+      "ThreatID": "T.S.004",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": "Require Knowledge about the security behaviour of the product or system type."
+        },
+        "KoIC": {
+          "description": "Requires knowledge about the asset to perform the attack that might be restricted to the product owner"
+        },
+        "WoO": {
+          "description": "Always available without any time limitation"
+        },
+        "Eq": {
+          "description": "Equipment is readily available. May need only a laptop"
+        }
+      },
+      "Description": "When software is obtained from untrusted or unauthorized sources, it often means that the package has not undergone proper verification, testing, or quality assurance processes. This lack of oversight creates several potential risks and challenges",
+      "RefineThreatClass": "T.S.000, Spoofing",
+      "SecurityProperties": {
+        "Authenticity": true
+      },
+      "ActsOn": "Component"
+    },
+    {
+      "ThreatName": "Hardware components are not from an authorized source",
+      "ThreatID": "T.S.005",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": "Requires an individual who is an experienced engineer and can understand architecture hardware components and complex systems"
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "The threat posed by hardware components that are not from an authorized source can have serious implications for the security, reliability, and performance of systems.",
+      "RefineThreatClass": "T.S.000, Spoofing",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Authenticity": true
+      },
+      "ActsOn": "Component"
+    },
+    {
+      "ThreatName": "Spoofing of information externally generated",
+      "ThreatID": "T.S.006",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "The threat of spoofing of externally generated information refers to the act of falsifying or manipulating data to deceive recipients into believing that it originates from a trusted or authorized source.",
+      "RefineThreatClass": "T.S.000, Spoofing",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Authenticity": true
+      },
+      "ActsOn": "Component"
+    },
+    {
+      "ThreatName": "Spoofing of information internally generated",
+      "ThreatID": "T.S.007",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "The threat of spoofing of internally generated information refers to the act to deceive recipients into believing that it originates from a trusted or authorized source. ",
+      "RefineThreatClass": "T.S.000, Spoofing",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Authenticity": true
+      },
+      "ActsOn": "Component"
+    },
+    {
+      "ThreatName": "Location Spoofing",
+      "ThreatID": "T.S.008",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": "Need to be experienced with the security behavioral of the system"
+        },
+        "KoIC": {
+          "description": "It will require confidential information about the item that may be available within the developer teams and shared with other teams"
+        },
+        "WoO": {
+          "description": "May need access to the system hardware or software component"
+        },
+        "Eq": {
+          "description": "Tools are easily available online such as a VPN connection"
+        }
+      },
+      "Description": "Location spoofing refers to the act of faking or altering the information that identifies the physical location of an asset. It involves manipulating or providing false data about the geographic position. LIN 18 HITRUST Alliance. (2022). HITRUST Threat Catalogue - HITRUST Alliance. [online] Available at: https://hitrustalliance.net/hitrust-threat-catalogue/ [Accessed 30 Oct. 2023].",
+      "RefineThreatClass": "T.S.000, Spoofing",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Authenticity": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Exploitation of spoofing weaknesses",
+      "ThreatID": "T.S.099",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "The exploitation of spoofing weaknesses refers to the act of taking advantage of vulnerabilities or gaps in security measures to carry out spoofing attacks successfully. When attackers exploit spoofing weaknesses, they can manipulate or forge data to deceive systems or individuals.",
+      "RefineThreatClass": "T.S.000, Spoofing",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Authenticity": true
+      },
+      "ActsOn": ""
+    }
+  ]
+}

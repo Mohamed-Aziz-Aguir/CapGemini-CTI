@@ -1,0 +1,223 @@
+{
+  "ThreatName": "Initial Access",
+  "ThreatID": "T.IA.001",
+  "SubThreats": [
+    {
+      "ThreatName": "Browser Compromise",
+      "ThreatID": "T.IA.002",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Existing browser exploits would function; but they would need some modifications to access certain parts of the vehicle architecture"
+        },
+        "SE": {
+          "description": "Basic knowledge of browser exploits and information exchange protocols is required"
+        },
+        "KoIC": {
+          "description": "The attacker would need some knowledge of the information protocols within the vehicle to access the information they target; but otherwise everything is fairly public domain or otherwise easily accessible"
+        },
+        "WoO": {
+          "description": "Possible anytime the vehicle browser is in use; which could vary from user to user"
+        },
+        "Eq": {
+          "description": "A simple computer is the only requirement"
+        }
+      },
+      "Description": "A web browser within the vehicles network (typically in an infotainment system) is exploited or compromised by an attacker to gain control of the browsing environment",
+      "RefineThreatClass": "T.IA.001, Initial Access",
+      "SecurityProperties": {
+        "Integrity": true,
+        "Authenticity": true,
+        "Confidentiality": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Exploit Via Radio Interface",
+      "ThreatID": "T.IA.003",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Some research time for known exploits and certain aspects of the vehicle architecture is required "
+        },
+        "SE": {
+          "description": "Knowledge of basic radio interfaces and potential controls is required"
+        },
+        "KoIC": {
+          "description": "Most of the knowledge for these interfaces are public facing, however certain aspects that an attacker may want to access may be proprietary or otherwise hidden"
+        },
+        "WoO": {
+          "description": "Unlimited as the surfaces are essentially always in use by the end-user"
+        },
+        "Eq": {
+          "description": "Depending on the desired affect, either specialized or standard equipment would be required"
+        }
+      },
+      "Description": "An attack that targets vulnerabilities in radio-based communication interfaces",
+      "RefineThreatClass": "T.IA.001, Initial Access",
+      "SecurityProperties": {
+        "Integrity": true,
+        "Authenticity": true,
+        "Confidentiality": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Exploit Via Removable Media",
+      "ThreatID": "T.IA.004",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Creating the removable media exploit is quite quick, having it function as intended within the vehicle requires more research"
+        },
+        "SE": {
+          "description": "Knowledge of removable media device exploits is required"
+        },
+        "KoIC": {
+          "description": "The attacker would need to understand if there are any controls in place to prevent this type of attack for it to work"
+        },
+        "WoO": {
+          "description": "Depending on the attackers relation to the vehicle owner, it may be quite difficult to gain access to the car and insert the removable media"
+        },
+        "Eq": {
+          "description": "A standard computer and removable media device are all that is needed and is quite readily available "
+        }
+      },
+      "Description": "Exploitation of vulnerabilities found in the execution of data from removable media devices. USB drives, SD cards, etc",
+      "RefineThreatClass": "T.IA.001, Initial Access",
+      "SecurityProperties": {
+        "Integrity": true,
+        "Authenticity": true,
+        "Confidentiality": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Malicious App",
+      "ThreatID": "T.IA.005",
+      "AttackFeasibilityLevel": "LOW",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Getting the application approved for the storefront is a major hurdle that will take a long time to overcome; it will then quickly be taken down after user reports as well"
+        },
+        "SE": {
+          "description": "Knowledge of software engineering, automotive architecture, and validation spoofing for the storefront is required for this attack to function"
+        },
+        "KoIC": {
+          "description": "In-depth knowledge of a variety of vehicle eco-systems is required for this attack to function"
+        },
+        "WoO": {
+          "description": "Unlimited as the user only needs to download and execute the application"
+        },
+        "Eq": {
+          "description": "A standard computer is required to create the application"
+        }
+      },
+      "Description": "A software application that is designed to perform malicious activities when installed or executed",
+      "RefineThreatClass": "T.IA.001, Initial Access",
+      "SecurityProperties": {
+        "Integrity": true,
+        "Authenticity": true,
+        "Confidentiality": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Phishing",
+      "ThreatID": "T.IA.006",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "These types of attacks can happen within the span of an hour"
+        },
+        "SE": {
+          "description": "Some knowledge is required in order to pass as a legitimate source; but nothing intensive"
+        },
+        "KoIC": {
+          "description": "specific knowledge surrounding the vehicle is not required for this type of attack"
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": "Specialized equipment may be required in order for the attacker to actually obtain the information they are looking for; even if they have the consent of the driver/owner"
+        }
+      },
+      "Description": "An attacker deceives or tricks the vehicle owners or users into revealing sensitive information. Sometimes by posing as a legitimate entity or service. This is a type of social engineering attack",
+      "RefineThreatClass": "T.IA.001, Initial Access",
+      "SecurityProperties": {
+        "Integrity": true,
+        "Authenticity": true,
+        "Confidentiality": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Physical Modification",
+      "ThreatID": "T.IA.007",
+      "AttackFeasibilityLevel": "VERY LOW",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Malicious parts would need to be created and tested before this attack could be performed"
+        },
+        "SE": {
+          "description": "Depending on the installation of the part; it could be quite simple or require a bit more experience to perform correctly"
+        },
+        "KoIC": {
+          "description": "Some knowledge about internal protocols is required for this type of attack to function "
+        },
+        "WoO": {
+          "description": "Physical access to the vehicle is required; and depending on the context that time window could be incredibly short"
+        },
+        "Eq": {
+          "description": "A strong understanding of vehicle architecture is required for this attack to work"
+        }
+      },
+      "Description": "Making unauthorized alterations or modifications to physical components or systems with the intention of compromising the vehicle or parts of it as a whole.",
+      "RefineThreatClass": "T.IA.001, Initial Access",
+      "SecurityProperties": {
+        "Integrity": true,
+        "Authenticity": true,
+        "Confidentiality": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Supply Chain Compromise",
+      "ThreatID": "T.IA.008",
+      "AttackFeasibilityLevel": "VERY LOW",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "The attacker would need to contribute to the project and then ensure that it went to market"
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": "This should be a non-factor as the attacker would not need to gain access to this information; as the attack dictates they would already have it"
+        },
+        "WoO": {
+          "description": "The attacker would need to know when certain parts are being designed and become a part of that design team"
+        },
+        "Eq": {
+          "description": "Equipment needs would be handled by the vendor; so the attacker does not need to make an investment heres"
+        }
+      },
+      "Description": "An attacker infiltrates and exploits trusted suppliers or vendors to introduce malicious components or vulnerabilities into the supply chain itself",
+      "RefineThreatClass": "T.IA.001, Initial Access",
+      "SecurityProperties": {
+        "Integrity": true,
+        "Authenticity": true,
+        "Confidentiality": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    }
+  ]
+}

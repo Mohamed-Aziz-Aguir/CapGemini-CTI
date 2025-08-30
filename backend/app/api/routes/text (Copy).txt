@@ -1,0 +1,183 @@
+[
+  {
+    "ThreatName": "Persistence",
+    "ThreatID": "T.P.001",
+    "SubThreats": [
+      {
+        "ThreatName": "Abuse UDS For Persistence",
+        "ThreatID": "T.P.002",
+        "AttackFeasibilityLevel": "HIGH",
+        "FeasibilityRating": {
+          "ET": {
+            "description": "Time to develop this type of attack is short as the format is standardized"
+          },
+          "SE": {
+            "description": "While UDS is a standardized protocol, knowing how to use it as an exploit point requires greater expertise"
+          },
+          "KoIC": {
+            "description": "Some elements of the vehicle that the attacker may want access to could be proprietary"
+          },
+          "WoO": {
+            "description": "Access to the vehicles UDS access point is required"
+          },
+          "Eq": {
+            "description": "UDS reader/writers are quite easy and affordable"
+          }
+        },
+        "Description": "An attacker exploits the UDS protocol to gain access over vehicle systems",
+        "RefineThreatClass": "T.P.001, Persistence",
+        "SecurityProperties": {
+          "Confidentiality": true,
+          "Integrity": true
+        },
+        "ActsOn": ""
+      },
+      {
+        "ThreatName": "Disable Software Update",
+        "ThreatID": "T.P.003",
+        "AttackFeasibilityLevel": "HIGH",
+        "FeasibilityRating": {
+          "ET": {
+            "description": "Simly preventing the connection is all that is required for this attack to function"
+          },
+          "SE": {
+            "description": "Knowledge of how to prevent the vehicle from communicating with its software update server is required"
+          },
+          "KoIC": {
+            "description": "Simply understanding how to prevent wireless communication is required for this attack"
+          },
+          "WoO": {
+            "description": ""
+          },
+          "Eq": {
+            "description": "Some fairly minor specialized equipment would be required for this attack"
+          }
+        },
+        "Description": "An attacker disables a vehicles capability to update its software. This type of attack is typically done in order to use an exploit that is found within the vehicles current version of the software",
+        "RefineThreatClass": "T.P.001, Persistence",
+        "SecurityProperties": {
+          "Confidentiality": true,
+          "Integrity": true
+        },
+        "ActsOn": ""
+      },
+      {
+        "ThreatName": "Modify OS Kernel, Boot Partition, or System Partition",
+        "ThreatID": "T.P.004",
+        "AttackFeasibilityLevel": "VERY LOW",
+        "FeasibilityRating": {
+          "ET": {
+            "description": "Finding an exploit for this could take quite sometime, particularly if the researcher has difficulty reverse engineering the OS"
+          },
+          "SE": {
+            "description": "General knowledge of OS kernels, their operation, and how to gain access to them is required for this type of attack"
+          },
+          "KoIC": {
+            "description": "The attackers need to know several aspects about the boot, os, and kernel layer of the OS in order to perform this type of attack"
+          },
+          "WoO": {
+            "description": "All surfaces of this attack are used upon vehicle startup, but if physical access to the vehicle is required this step becomes more difficult"
+          },
+          "Eq": {
+            "description": "A standard computer and something to physically modify the kernel is required for this attack"
+          }
+        },
+        "Description": "An attacker modifies the base level of a vehicles operating system",
+        "RefineThreatClass": "T.P.001, Persistence",
+        "SecurityProperties": {
+          "Confidentiality": true,
+          "Integrity": true
+        },
+        "ActsOn": ""
+      },
+      {
+        "ThreatName": "Modify TEE",
+        "ThreatID": "T.P.005",
+        "AttackFeasibilityLevel": "LOW",
+        "FeasibilityRating": {
+          "ET": {
+            "description": "A deep understanding of the vehicle architecture, controls, and various cryptography methods used must be understood before this attack can work"
+          },
+          "SE": {
+            "description": "The attacker must be able to identify what is within the TEE, how to break into it, and then how to gain access to the information that they are seeking"
+          },
+          "KoIC": {
+            "description": "Some knowledge of internal systems is required for this attack"
+          },
+          "WoO": {
+            "description": "the TEE surface is available every time the vehicle is used"
+          },
+          "Eq": {
+            "description": ""
+          }
+        },
+        "Description": "An attacker changes the trusted execution environment of the vehicle",
+        "RefineThreatClass": "T.P.001, Persistence",
+        "SecurityProperties": {
+          "Confidentiality": true,
+          "Integrity": true
+        },
+        "ActsOn": "Component"
+      }
+    ]
+  }
+]
+
+
+this is the result of persistence for example 
+the page returns dosn't give back an organized return
+Threat Catalog
+Browse and analyze threat intelligence data
+
+All
+execution
+privilege_escalation
+lateral_movement
+initial_access
+collection
+command_and_control
+defense_ecasion
+credential_access
+discovery
+persistence
+tampering
+exfiltration
+spoofing
+information_disclosure
+repudiation
+manipulate_environment
+5
+Total Threats
+0
+Critical
+2
+High
+0
+Medium
+Persistence
+UNKNOWN
+persistence
+Abuse UDS For Persistence
+HIGH
+An attacker exploits the UDS protocol to gain access over vehicle systems
+
+persistence
+Disable Software Update
+HIGH
+An attacker disables a vehicles capability to update its software. This type of attack is typically done in order to use an exploit that is found within the vehicles current version of the software
+
+persistence
+Modify OS Kernel, Boot Partition, or System Partition
+VERY LOW
+An attacker modifies the base level of a vehicles operating system
+
+persistence
+Modify TEE
+LOW
+An attacker changes the trusted execution environment of the vehicle
+
+persistence
+
+
+make sure it is well categorized the name of the threat is highlighted and the data is well organized with every detail in it extracted 
+

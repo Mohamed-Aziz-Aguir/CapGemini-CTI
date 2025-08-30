@@ -1,0 +1,254 @@
+{
+  "ThreatName": "Discovery",
+  "ThreatID": "T.Di.001",
+  "SubThreats": [
+    {
+      "ThreatName": "File and Directory Discovery",
+      "ThreatID": "T.Di.002",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Highly variable depending on the methodology used, but knowledge of the vehicles directory system is required and must be researched by the attacker first"
+        },
+        "SE": {
+          "description": "Depending on the strategy used, this rating is subject to change. A brute force attack is quite simple to perform, but the use of a web crawler requires more expertise"
+        },
+        "KoIC": {
+          "description": "An understanding of the directory system used by the vehicle and potential controls is required by the attacker"
+        },
+        "WoO": {
+          "description": "Directory systems within vehicles typically do not change, with the only variable being the security surrounding those directories"
+        },
+        "Eq": {
+          "description": "Depending on the attack, either a standard computer or more specialized equipment will be required"
+        }
+      },
+      "Description": "An attack designed to discover and retrieve confidential information stored within the vehicle through exploiting vulnerabilities within the system",
+      "RefineThreatClass": "T.Di.001, Discovery",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Location Tracking",
+      "ThreatID": "T.Di.003",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Researching a methodology that allows for undetected tracking will require some time"
+        },
+        "SE": {
+          "description": "Knowledge of both vehicle architecture and software vulnerabilities are required for this attack"
+        },
+        "KoIC": {
+          "description": "Some knowledge of the specific internals of the vehicle is required"
+        },
+        "WoO": {
+          "description": "While the physical architecture is static, updates to the software will shift the window of opprotunity"
+        },
+        "Eq": {
+          "description": "While it is potentially possible to perform this using native navigation tools on the vehicle (GPS), it is possible that specialized equipment could be used to perform this action"
+        }
+      },
+      "Description": "An attacker exploits a vulnerability to track the location of the vehicle",
+      "RefineThreatClass": "T.Di.001, Discovery",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Network Service Scanning",
+      "ThreatID": "T.Di.004",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Scanning and probing a network is quite simple to do and takes very little time to perform"
+        },
+        "SE": {
+          "description": "Knowledge of probing/scanning and pen testing is required for this attack"
+        },
+        "KoIC": {
+          "description": "Some knowledge of the internal protocols of the vehicle are required for this attack to function. IE understanding how to bypass the firewall"
+        },
+        "WoO": {
+          "description": "Scans/probes can be performed during the lifecycle of the car. Physical scans will require access to the vehicle"
+        },
+        "Eq": {
+          "description": "While it is possible to perform this attack with a standard computer, using ports to scan will require specialized equipment"
+        }
+      },
+      "Description": "An attacker probes or scans the ports of a vehicle to identify security weaknesses",
+      "RefineThreatClass": "T.Di.001, Discovery",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Process Discovery",
+      "ThreatID": "T.Di.005",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Research time to find ways to read the processes and find a beneficial exploit requires some time"
+        },
+        "SE": {
+          "description": "Automotive and general computational knowledge is required to perform this attack"
+        },
+        "KoIC": {
+          "description": "Additional knowledge about the vehicles control systems and cryptography is required for this attack"
+        },
+        "WoO": {
+          "description": "This can occur at any point during runtime"
+        },
+        "Eq": {
+          "description": "While some information can be discovered using only a computer, some specialized equipment is required to see all processes"
+        }
+      },
+      "Description": "An attacker gaining access to information about the running process and characteristics of the vehicle",
+      "RefineThreatClass": "T.Di.001, Discovery",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Software Discovery",
+      "ThreatID": "T.Di.006",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Time is required to find the vulnerabilities with this type of attack"
+        },
+        "SE": {
+          "description": "Knowledge of both automotive and computational systems are required"
+        },
+        "KoIC": {
+          "description": "Knowledge about internal controls and how to bypass them is required to find the information that the attacker is looking for"
+        },
+        "WoO": {
+          "description": "This attack can typically be performed at anytime"
+        },
+        "Eq": {
+          "description": "Some information can be found with a computer, but other parts of the system require specialized equipment to find vulnerabilities"
+        }
+      },
+      "Description": "an attacker gathers information regarding components, versions, and configurations of the software used by a vehicles computing systems ",
+      "RefineThreatClass": "T.Di.001, Discovery",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "System Information Discovery",
+      "ThreatID": "T.Di.007",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Time is required to discover useful information in this type of attack"
+        },
+        "SE": {
+          "description": "Knowledge of both automotive and computational systems are required for this attack"
+        },
+        "KoIC": {
+          "description": "Knowledge of internal controls and how to bypass them is required for the attacker to get actionable information"
+        },
+        "WoO": {
+          "description": "Window of opportunity is only limited by frequency of updates and their security"
+        },
+        "Eq": {
+          "description": "While some information can be found with computer, other aspects will require more specialized equipment"
+        }
+      },
+      "Description": "An attack designed to find detailed information regarding how a vehicle's internal systems store and utilize information ",
+      "RefineThreatClass": "T.Di.001, Discovery",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "System Network Configuration Discovery",
+      "ThreatID": "T.Di.008",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Some time is required to discover vulnerabilities within a network configuration"
+        },
+        "SE": {
+          "description": "Knowledge of network protocols is required"
+        },
+        "KoIC": {
+          "description": "Knowledge of internal controls is required, but is something that an attacker could overcome with time"
+        },
+        "WoO": {
+          "description": "Window of opportunity is only limited by updates and their security"
+        },
+        "Eq": {
+          "description": "Only a computer is required for this attack"
+        }
+      },
+      "Description": "An attack where the goal is to determine how the network configuration of a vehicle functions",
+      "RefineThreatClass": "T.Di.001, Discovery",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "System Network Connections Discovery",
+      "ThreatID": "T.Di.009",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Some time is required to find vulnerabilities"
+        },
+        "SE": {
+          "description": "Knowledge about networking protocols is required"
+        },
+        "KoIC": {
+          "description": "Some knowledge of the internal controls is required, but an attacker can discover and overcome these"
+        },
+        "WoO": {
+          "description": "Window of opportunity is only limited by frequency of updates"
+        },
+        "Eq": {
+          "description": "Only a computer is required to perform this type of attack"
+        }
+      },
+      "Description": "An attack designed to find the network connections present in a vehicle",
+      "RefineThreatClass": "T.Di.001, Discovery",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    }
+  ]
+}

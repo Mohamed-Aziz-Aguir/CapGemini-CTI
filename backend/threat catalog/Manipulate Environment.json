@@ -1,0 +1,246 @@
+{
+  "ThreatName": "Manipulate Environment",
+  "ThreatID": "T.M.001",
+  "SubThreats": [
+    {
+      "ThreatName": "Adversarial Machine Learning",
+      "ThreatID": "T.M.002",
+      "AttackFeasibilityLevel": "VERY LOW",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": "A deep understanding of machine learning modules from a theoretical and practical perspective is required to even begin planning such an attack"
+        },
+        "KoIC": {
+          "description": "A good understanding of the internal model, what protections are in place, and the models used to train the current model are required in order to successfully break the machine learning system"
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "Manipulating or exploitation of machine learning modules that cause them to make incorrect or unsafe decisions",
+      "RefineThreatClass": "T.M.001, Manipulate Environment",
+      "SecurityProperties": {
+        "Integrity": true,
+        "Authenticity": true,
+        "Confidentiality": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Analog Sensor Attacks",
+      "ThreatID": "T.M.003",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": "Knowledge of general vehicle components and systems is required"
+        },
+        "KoIC": {
+          "description": "As long as general car systems are understood and there are no unique controls in place; public knowledge or some simple tinkering under the hood would provide the information required for this type of attack"
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "An attack on the analog sensors used to gather physical data such as the current acceleration of the vehicle, temperature, tire pressure, etc.",
+      "RefineThreatClass": "T.M.001, Manipulate Environment",
+      "SecurityProperties": {
+        "Integrity": true,
+        "Authenticity": true,
+        "Confidentiality": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Downgrade to Insecure Protocols",
+      "ThreatID": "T.M.004",
+      "AttackFeasibilityLevel": "LOW",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Discovering a way to downgrade to insecure protocols can take time; more so if updates are continuously pushed "
+        },
+        "SE": {
+          "description": "Depending on the system, specific equipment is going to be a necessity"
+        },
+        "KoIC": {
+          "description": "Knowledge of the previous protocols and current ones are required in order to make a downgrade possible"
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "Modifying the software or firmware of an automotive system to a previous version for the sake of using an exploit that has been patched out in future iterations",
+      "RefineThreatClass": "T.M.001, Manipulate Environment",
+      "SecurityProperties": {
+        "Integrity": true,
+        "Authenticity": true,
+        "Confidentiality": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Jamming or Denial of Service",
+      "ThreatID": "T.M.005",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": "This particular ratings it the most contentious. Depending on the system that the attacker wants to jam it could very easily be public knowledge such as standard WIFI protocols; or it could be a system that is proprietary and requires much more knowledge about the specific item to accomplish"
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "Disrupting or blocking normal operations of vehicle systems, typically through overwhelming or interfering with communication channels or sensors. Specific feasibility ratings will vary dramatically depending on the system that is trying to be disrupted LIN 10 HITRUST Alliance. (2022). HITRUST Threat Catalogue - HITRUST Alliance. [online] Available at: https://hitrustalliance.net/hitrust-threat-catalogue/ [Accessed 30 Oct. 2023].",
+      "RefineThreatClass": "T.M.001, Manipulate Environment",
+      "SecurityProperties": {
+        "Integrity": true,
+        "Authenticity": true,
+        "Confidentiality": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Manipulate Communication",
+      "ThreatID": "T.M.006",
+      "AttackFeasibilityLevel": "LOW",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Once again depends on the encryption methodology used to protect the infomrmation"
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": "The attacker will need to know what type of controls are put into place in order to have a chance at breaking the encryption"
+        },
+        "WoO": {
+          "description": "Depends on the type of encryption used to protect as some are mathematically superior to others "
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "Deliberate altering or tampering of data or messages exchanged between systems or components within the vehicles network",
+      "RefineThreatClass": "T.M.001, Manipulate Environment",
+      "SecurityProperties": {
+        "Integrity": true,
+        "Authenticity": true,
+        "Confidentiality": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Relay Communications",
+      "ThreatID": "T.M.007",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "The attackers will need to first discover the methodology for the wireless communication and any controls put into place before they can begin to attempt attacks"
+        },
+        "SE": {
+          "description": "Knowledge of wireless transmission protocols is required "
+        },
+        "KoIC": {
+          "description": "Knowledge of internal controls is needed in order for the attack to be successful "
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "A man-in-the-middle style of attack in which the attacker intercepts information sent between two legitimate sources within a vehicles network",
+      "RefineThreatClass": "T.M.001, Manipulate Environment",
+      "SecurityProperties": {
+        "Integrity": true,
+        "Authenticity": true,
+        "Confidentiality": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Rogue Cellular Base Station",
+      "ThreatID": "T.M.008",
+      "AttackFeasibilityLevel": "LOW",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": "Knowledge of the vehicle system, how to create a system, and then how to have the vehicle recognize the fraudulent system as legitimate is required "
+        },
+        "KoIC": {
+          "description": "Knowledge of the internal systems and controls are required in order to exploit them"
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": "Bespoke equipment is required for the attacker to pass off a non-legitimate device as acceptable to the system"
+        }
+      },
+      "Description": "A man-in-the-middle style of attack in which the attacker forces the vehicle system/network to recognize a malicious device or network as legitimate LIN 36: HITRUST Threat Catalogue (2022) HITRUST Alliance. Available at: https://hitrustalliance.net/hitrust-threat-catalogue/ (Accessed: 30 October 2023). ",
+      "RefineThreatClass": "T.M.001, Manipulate Environment",
+      "SecurityProperties": {
+        "Integrity": true,
+        "Authenticity": true,
+        "Confidentiality": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Rogue Wi-Fi Access Point",
+      "ThreatID": "T.M.009",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": "Knowledge of the WIFI system used by the product, the protocols involved, and how to mask a WIFI network is required"
+        },
+        "KoIC": {
+          "description": "Knowledge of the internal WIFI protocols of the product is required for this attack to work"
+        },
+        "WoO": {
+          "description": "The WIFI of automotive products is used quite frequently, so the attacker has the opportunity to place their network as legitimate so long as the car is in use/service"
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "A man-in-the-middle attack in which an attacker has the victim connect to a seemingly legitimate WIFI access point. They are then able to view and manipulate the data that the victim sends to the fraudulent WIFI access point",
+      "RefineThreatClass": "T.M.001, Manipulate Environment",
+      "SecurityProperties": {
+        "Integrity": true,
+        "Authenticity": true,
+        "Confidentiality": true
+      },
+      "ActsOn": ""
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lilly Streaming vs Full Response</title>
+<style>
+  body { font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; margin: 20px; }
+  .container { display: flex; gap: 40px; margin-top: 20px; }
+  .box { border: 1px solid #ccc; padding: 20px; width: 400px; height: 300px; overflow-y: auto; white-space: pre-wrap; background: #f9f9f9; }
+  input { width: 600px; padding: 8px; font-size: 16px; }
+  button { padding: 8px 12px; margin-left: 10px; }
+  h2 { margin-bottom: 5px; }
+</style>
+</head>
+<body>
+
+<h1>Lilly Streaming vs Full Response</h1>
+<div>
+  <input type="text" id="prompt" placeholder="Type your prompt here">
+  <button onclick="startTest()">Send</button>
+</div>
+
+<div class="container">
+  <div>
+    <h2>Streaming (SSE)</h2>
+    <div id="streamOutput" class="box"></div>
+  </div>
+  <div>
+    <h2>Full Answer (JSON)</h2>
+    <div id="fullOutput" class="box"></div>
+  </div>
+</div>
+
+<script>
+function startTest() {
+    const prompt = document.getElementById("prompt").value.trim();
+    const streamOutput = document.getElementById("streamOutput");
+    const fullOutput = document.getElementById("fullOutput");
+
+    if (!prompt) return;
+
+    streamOutput.textContent = "";
+    fullOutput.textContent = "";
+
+    // --- Streaming SSE ---
+    const evtSource = new EventSource(`/api/lilly/ask?prompt=${encodeURIComponent(prompt)}&stream=true`);
+    evtSource.onmessage = function(event) {
+        streamOutput.textContent += event.data;
+        streamOutput.scrollTop = streamOutput.scrollHeight;
+    };
+    evtSource.onerror = function() {
+        evtSource.close();
+    };
+
+    // --- Full-text JSON ---
+    fetch(`/api/lilly/ask?prompt=${encodeURIComponent(prompt)}&stream=false`)
+        .then(resp => resp.json())
+        .then(data => {
+            fullOutput.textContent = data.answer;
+        })
+        .catch(err => {
+            fullOutput.textContent = "Error fetching full answer.";
+            console.error(err);
+        });
+}
+</script>
+
+</body>
+</html>
+

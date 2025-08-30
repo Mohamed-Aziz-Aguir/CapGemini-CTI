@@ -1,0 +1,342 @@
+{
+  "ThreatName": "Tampering",
+  "ThreatID": "T.T.000",
+  "SubThreats": [
+    {
+      "ThreatName": "Manipulation of data from external (transfer)",
+      "ThreatID": "T.T.001",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "LIN 24 HITRUST Alliance. (2022). HITRUST Threat Catalogue - HITRUST Alliance. [online] Available at: https://hitrustalliance.net/hitrust-threat-catalogue/ [Accessed 30 Oct. 2023]. Unauthorized alteration or manipulation of data while it's being transferred from an external source to the system/target. A malicious actor could intercept the data during transmission, change its contents, and then allow it to continue to target system.",
+      "RefineThreatClass": "T.T.000, Tampering",
+      "SecurityProperties": {
+        "Integrity": true
+      },
+      "ActsOn": "Channel, DataFlow"
+    },
+    {
+      "ThreatName": "Manipulation of data from internal (transfer)",
+      "ThreatID": "T.T.002",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "LIN 24 HITRUST Alliance. (2022). HITRUST Threat Catalogue - HITRUST Alliance. [online] Available at: https://hitrustalliance.net/hitrust-threat-catalogue/ [Accessed 30 Oct. 2023]. Unauthorized alteration of data while it's being transferred within the system itself. A malicious actor could exploit internal vulnerabilities to intercept and modify data during its internal transmission. Access to the target is needed.",
+      "RefineThreatClass": "T.T.000, Tampering",
+      "SecurityProperties": {
+        "Integrity": true
+      },
+      "ActsOn": "Channel, DataFlow"
+    },
+    {
+      "ThreatName": "Manipulation (computation)",
+      "ThreatID": "T.T.003",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "LIN 23 HITRUST Alliance. (2022). HITRUST Threat Catalogue - HITRUST Alliance. [online] Available at: https://hitrustalliance.net/hitrust-threat-catalogue/ [Accessed 30 Oct. 2023]. Unauthorized alterations or changes made to data, functions, or processes while computations are being performed within a system.",
+      "RefineThreatClass": "T.T.000, Tampering",
+      "SecurityProperties": {
+        "Integrity": true
+      },
+      "ActsOn": "Channel, Component"
+    },
+    {
+      "ThreatName": "Manipulation (memory)",
+      "ThreatID": "T.T.004",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "Unauthorized alteration of data stored in memory. (EEprom, Flash, etc.)",
+      "RefineThreatClass": "T.T.000, Tampering",
+      "SecurityProperties": {
+        "Integrity": true
+      },
+      "ActsOn": "Component"
+    },
+    {
+      "ThreatName": "Manipulation of Code",
+      "ThreatID": "T.T.005",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "Unauthorized modification of an application's source code, bytecode, or runtime code. References: HITRUST Threat Catalogue (2022) HITRUST Alliance. Available at: https://hitrustalliance.net/hitrust-threat-catalogue/ (Accessed: 02 October 2023). LIN 3 ",
+      "RefineThreatClass": "T.T.000, Tampering",
+      "SecurityProperties": {
+        "Integrity": true
+      },
+      "ActsOn": "Component"
+    },
+    {
+      "ThreatName": "Parameter Injection",
+      "ThreatID": "T.T.006",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "Manipulation of parameters used by an application to trigger undefined behavior.",
+      "RefineThreatClass": "T.T.000, Tampering",
+      "SecurityProperties": {
+        "Integrity": true
+      },
+      "ActsOn": "Channel, DataFlow"
+    },
+    {
+      "ThreatName": "Code Injection",
+      "ThreatID": "T.T.007",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "Exploitation of a weakness in the input validation on the target to inject new code into the software which is currently executing. This differs from code inclusion in that code inclusion involves the addition or replacement of a reference to a code file, which is subsequently loaded by the target and used as part of the code of some application. LIN 7 HITRUST Alliance. (2022). HITRUST Threat Catalogue - HITRUST Alliance. [online] Available at: https://hitrustalliance.net/hitrust-threat-catalogue/ [Accessed 30 Oct. 2023].",
+      "RefineThreatClass": "T.T.000, Tampering",
+      "SecurityProperties": {
+        "Integrity": true
+      },
+      "ActsOn": "Component"
+    },
+    {
+      "ThreatName": "Command Injection",
+      "ThreatID": "T.T.008",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "Manipulation of an existing command in a software system by injecting new items, altering the command's intended function. LIN 8 HITRUST Alliance. (2022). HITRUST Threat Catalogue - HITRUST Alliance. [online] Available at: https://hitrustalliance.net/hitrust-threat-catalogue/ [Accessed 30 Oct. 2023].",
+      "RefineThreatClass": "T.T.000, Tampering",
+      "SecurityProperties": {
+        "Integrity": true
+      },
+      "ActsOn": "Component"
+    },
+    {
+      "ThreatName": "Replay attack",
+      "ThreatID": "T.T.010",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "Interception and record of network data to retransmit it later and recreate or initiate transactions by replaying the recorded data.",
+      "RefineThreatClass": "T.T.000, Tampering",
+      "SecurityProperties": {
+        "Integrity": true
+      },
+      "ActsOn": "Channel, DataFlow"
+    },
+    {
+      "ThreatName": "Configuration/Settings Manipulation",
+      "ThreatID": "T.T.011",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "Altering the settings or configuration of an application, system, or network device in order to compromise security, disrupt the system's functioning, triggering undefined behavior or gaining unauthorized access.",
+      "RefineThreatClass": "T.T.000, Tampering",
+      "SecurityProperties": {
+        "Integrity": true
+      },
+      "ActsOn": "Component"
+    },
+    {
+      "ThreatName": "Protocol Manipulation",
+      "ThreatID": "T.T.012",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "Exploitation of one or more weakness(es) in a communications protocol to carry out malicious activities.",
+      "RefineThreatClass": "T.T.000, Tampering",
+      "SecurityProperties": {
+        "Integrity": true
+      },
+      "ActsOn": "Channel, DataFlow"
+    },
+    {
+      "ThreatName": "Exploitation of tampering weaknesses",
+      "ThreatID": "T.T.099",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "",
+      "RefineThreatClass": "T.T.000, Tampering",
+      "SecurityProperties": {
+        "Integrity": true
+      },
+      "ActsOn": "Component"
+    }
+  ]
+}

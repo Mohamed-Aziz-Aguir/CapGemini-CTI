@@ -1,0 +1,192 @@
+{
+  "ThreatName": "Exfiltration",
+  "ThreatID": "T.Exf.001",
+  "SubThreats": [
+    {
+      "ThreatName": "Aftermarket, Customer, or Dealer Equipment",
+      "ThreatID": "T.Exf.002",
+      "AttackFeasibilityLevel": "VERY LOW",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Researching the specific part, automotive, and computational system used by the vehicle is required"
+        },
+        "SE": {
+          "description": "General knowledge of automotive and computational systems is required. Additional knowledge about the specific part is also required"
+        },
+        "KoIC": {
+          "description": "Detailed knowledge about the vehicle's control systems is required"
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": "Non-OEM equipment is required, but not always chosen by the attacker"
+        }
+      },
+      "Description": "An attack designed to extract sensitive data or information from a vehicle through the attack surface of aftermarket, customer, or dealer equipment ",
+      "RefineThreatClass": "T.Exf.001, Exfiltration",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Cellular Communication",
+      "ThreatID": "T.Exf.003",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Cellular communication protocols and weaknesses are documented, but the specific implementation within the vehicle must be researched"
+        },
+        "SE": {
+          "description": "Knowledge about automotive and cellular communication systems is required"
+        },
+        "KoIC": {
+          "description": "Some knowledge about the vehicle's controls may be required"
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": "Some specialized equipment may be required"
+        }
+      },
+      "Description": "An attack designed to harvest and extract cellular communication data from the vehicle ",
+      "RefineThreatClass": "T.Exf.001, Exfiltration",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Internet Communication",
+      "ThreatID": "T.Exf.004",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Internet protocol documentation is widely available, including exploits and weaknesses"
+        },
+        "SE": {
+          "description": "Knowledge of internet communication protocols is required"
+        },
+        "KoIC": {
+          "description": "Knowledge about controls used by the vehicle (such as firewalls) are required"
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": "Some specialized equipment may be required, or a standard computer may be the only equipment necessary"
+        }
+      },
+      "Description": "An attack designed to harvest and extract sensitive information pertaining the internet communication of the vehicle",
+      "RefineThreatClass": "T.Exf.001, Exfiltration",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Removable Media",
+      "ThreatID": "T.Exf.005",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Removable media is typically non-proprietary. With documentation and known weaknesses and exploits easily researchable"
+        },
+        "SE": {
+          "description": "Knowledge of different removable media devices and their exploits is required"
+        },
+        "KoIC": {
+          "description": "Some knowledge about the vehicle's controls is required"
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": "Some specialized equipment may be required"
+        }
+      },
+      "Description": "An attack designed to harvest and extract sensitive information found on removable media within a vehicle",
+      "RefineThreatClass": "T.Exf.001, Exfiltration",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Short Range Wireless Communication",
+      "ThreatID": "T.Exf.006",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Short range protocol documentation is widely available. Including potential weaknesses and exploits"
+        },
+        "SE": {
+          "description": "Knowledge of short range communication protocols is required"
+        },
+        "KoIC": {
+          "description": "Some knowledge about the vehicle's controls is required"
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": "Some specialized equipment may be required"
+        }
+      },
+      "Description": "an attack designed to harvest and extract sensitive information found within the short range wireless communication of a vehicle",
+      "RefineThreatClass": "T.Exf.001, Exfiltration",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Standard Cryptographic Protocol",
+      "ThreatID": "T.Exf.007",
+      "AttackFeasibilityLevel": "VERY LOW",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Research is required to find where that data is stored locally, and the ideal attack surface to achieve the extraction"
+        },
+        "SE": {
+          "description": "Knowledge of automotive and cryptographic systems is required"
+        },
+        "KoIC": {
+          "description": "Detailed information about the vehicle's control systems is required"
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": "Some specialized equipment may be required"
+        }
+      },
+      "Description": "An attack designed to harvest and extract sensitive information concerning the cryptographic protocols used by the vehicle",
+      "RefineThreatClass": "T.Exf.001, Exfiltration",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    }
+  ]
+}

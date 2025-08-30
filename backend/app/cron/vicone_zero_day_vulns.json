@@ -1,0 +1,578 @@
+[
+  {
+    "zero_day_id": "ZDI-CAN-26359",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Bypass authentication on the system."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26357",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of the device."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26355",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Compromise the integrity of downloaded information."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26354",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Compromise the integrity of downloaded information."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26353",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Bypass authentication on the system."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26352",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Disclose sensitive information."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26351",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Disclose sensitive information."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26350",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of the device."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26349",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of the device."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26348",
+    "cve": "Not yet assigned",
+    "category": "Operating System",
+    "impact": "Disclose sensitive information."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26346",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Bypass authentication on the system."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26340",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Disclose sensitive information."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26339",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26338",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26337",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Compromise the integrity of downloaded information."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26334",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of service account."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26333",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Compromise the integrity of downloaded information."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26332",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Firewall Bypass."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26331",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Bypass authentication on the system."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26330",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of the device."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26328",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of the device."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26327",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of the device."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26325",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Escalate privileges and execute arbitrary code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26324",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26322",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26321",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26318",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26317",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26316",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26315",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26314",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26313",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26312",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26311",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26307",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26306",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26305",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26300",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of the device."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26299",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Compromise the integrity of downloaded information."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26297",
+    "cve": "Not yet assigned",
+    "category": "Operating System",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26295",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Bypass authentication on the system."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26294",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of the device."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26292",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Bypass authentication on the system."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26290",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of service account."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26288",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26286",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of service account."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26285",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Bypass authentication on the system."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26284",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Bypass authentication on the system."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-26283",
+    "cve": "Not yet assigned",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of service account."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23321",
+    "cve": "CVE-2024-25997",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23320",
+    "cve": "CVE-2024-25998",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of service account."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23318",
+    "cve": "CVE-2024-29206",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of service account."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23317",
+    "cve": "CVE-2024-23971",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23313",
+    "cve": "CVE-2024-23969",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23312",
+    "cve": "CVE-2024-23963",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23306",
+    "cve": "CVE-2024-23961",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23305",
+    "cve": "CVE-2024-26002",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Escalate privileges and execute arbitrary code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23304",
+    "cve": "CVE-2024-26001",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of service account."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23303",
+    "cve": "CVE-2024-26005",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of service account."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23302",
+    "cve": "CVE-2024-23930",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Create a denial-of-service condition on the system."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23301",
+    "cve": "CVE-2024-23929",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Create arbitrary files on affected installations."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23300",
+    "cve": "CVE-2024-23921",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23249",
+    "cve": "CVE-2024-23935",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23246",
+    "cve": "CVE-2024-23962",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Disclose sensitive information."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23245",
+    "cve": "CVE-2024-24736",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of the device."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23244",
+    "cve": "CVE-2024-26003",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Disclose sensitive information."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23241",
+    "cve": "CVE-2024-23957",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of the device."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23239",
+    "cve": "CVE-2024-26000",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Disclose sensitive information."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23238",
+    "cve": "CVE-2024-23933",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of the device."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23230",
+    "cve": "CVE-2024-23967",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of the device."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23229",
+    "cve": "CVE-2024-23970",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23226",
+    "cve": "CVE-2024-24731",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of the device."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23225",
+    "cve": "CVE-2024-26288",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23223",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of the device."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23222",
+    "cve": "CVE-2024-23968",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23221",
+    "cve": "CVE-2024-25996",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23196",
+    "cve": "CVE-2024-23958",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Bypass authentication on the system."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23195",
+    "cve": "CVE-2024-7539",
+    "category": "Operating System",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23194",
+    "cve": "CVE-2024-23959",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of the device."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23193",
+    "cve": "Not yet assigned",
+    "category": "Operating System",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23190",
+    "cve": "CVE-2024-7538",
+    "category": "Operating System",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23189",
+    "cve": "CVE-2024-23937",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Disclose sensitive information."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23187",
+    "cve": "CVE-2024-29207",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Disclose sensitive information."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23186",
+    "cve": "CVE-2024-29208",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23185",
+    "cve": "CVE-2024-23972",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of the device."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23184",
+    "cve": "CVE-2024-23938",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of the device."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23158",
+    "cve": "CVE-2024-25995",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of service account."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23157",
+    "cve": "CVE-2024-7537",
+    "category": "Operating System",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23151",
+    "cve": "Not yet assigned",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Bypass authentication on the system."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23150",
+    "cve": "CVE-2024-23920",
+    "category": "Electric Vehicle Chargers",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23105",
+    "cve": "CVE-2024-23924",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23102",
+    "cve": "CVE-2024-23960",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Bypass signature validation mechanism."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-23101",
+    "cve": "CVE-2024-23928",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Compromise the integrity of downloaded information."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-22994",
+    "cve": "CVE-2024-23934",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of the device."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-22945",
+    "cve": "CVE-2024-23923",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of root."
+  },
+  {
+    "zero_day_id": "ZDI-CAN-22939",
+    "cve": "CVE-2024-23922",
+    "category": "In-Vehicle Infotainment (IVI)",
+    "impact": "Execute code in the context of the device."
+  }
+]

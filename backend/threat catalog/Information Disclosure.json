@@ -1,0 +1,202 @@
+{
+  "ThreatName": "Information Disclosure",
+  "ThreatID": "T.I.000",
+  "SubThreats": [
+    {
+      "ThreatName": "Interception",
+      "ThreatID": "T.I.001",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "Interception refers to the unauthorized access to data during its transmission or communication, leading to potential exposure of sensitive information to unintended recipients.",
+      "RefineThreatClass": "T.I.000, Information Disclosure",
+      "SecurityProperties": {
+        "Confidentiality": true
+      },
+      "ActsOn": "Channel, DataFlow"
+    },
+    {
+      "ThreatName": "Interception of Internal Data",
+      "ThreatID": "T.I.008",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "The interception of internal data refers to the act of exploiting vulnerabilities in communication channels or infrastructure, to access data as it traverses internal communication channels, potentially leading to unauthorized exposure of sensitive information or internal communications. ",
+      "RefineThreatClass": "T.I.000, Information Disclosure",
+      "SecurityProperties": {
+        "Confidentiality": true
+      },
+      "ActsOn": "Channel, DataFlow"
+    },
+    {
+      "ThreatName": "Interception of External Data",
+      "ThreatID": "T.I.009",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "The interception of external data refers to the act of exploiting vulnerabilities in communication channels or infrastructure, to capture or eavesdrop on data as it travels between external sources and the targeted system, possibly resulting in unauthorized access to sensitive information originating from external entities.",
+      "RefineThreatClass": "T.I.000, Information Disclosure",
+      "SecurityProperties": {
+        "Confidentiality": true
+      },
+      "ActsOn": "Channel, DataFlow"
+    },
+    {
+      "ThreatName": "Unintended Disclosure of PII Data",
+      "ThreatID": "T.I.005",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "The threat of unintentional exposure of Personally Identifiable Information (PII) due to inadequate safeguards or inadvertent actions, potentially leading to unauthorized access or misuse of sensitive personal data.",
+      "RefineThreatClass": "T.I.000, Information Disclosure",
+      "SecurityProperties": {
+        "Confidentiality": true
+      },
+      "ActsOn": "Component"
+    },
+    {
+      "ThreatName": "Software/Firmware Disclosure",
+      "ThreatID": "T.I.006",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "Software/Firmware Disclosure refers to a threat involving the unintended exposure of software or firmware source code, configuration settings, or proprietary algorithms, potentially leading to the compromise of intellectual property or exploitation of vulnerabilities.",
+      "RefineThreatClass": "T.I.000, Information Disclosure",
+      "SecurityProperties": {
+        "Confidentiality": true
+      },
+      "ActsOn": "Component"
+    },
+    {
+      "ThreatName": "Functional Observation",
+      "ThreatID": "T.I.007",
+      "AttackFeasibilityLevel": "LOW",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "The threat of Functional Observation refers to the act of unauthorized parties gaining insights into the functionality, operation, or behavior of a system or application, potentially leading to the disclosure of sensitive operational details, algorithms, or vulnerabilities, allowing them to infer sensitive information or exploit system weaknesses.",
+      "RefineThreatClass": "T.I.000, Information Disclosure",
+      "SecurityProperties": {
+        "Confidentiality": true
+      },
+      "ActsOn": "Channel, DataFlow"
+    },
+    {
+      "ThreatName": "Reverse Engineering",
+      "ThreatID": "T.I.002",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "LIN 35 HITRUST Alliance. (2022). HITRUST Threat Catalogue - HITRUST Alliance. [online] Available at: https://hitrustalliance.net/hitrust-threat-catalogue/ [Accessed 30 Oct. 2023]. The threat posed by Reverse Engineering is the act of analyzing software, hardware, or firmware to extract valuable information such as source code, algorithms, or proprietary designs, potentially leading to the unauthorized disclosure of intellectual property and exploitation of vulnerabilities.",
+      "RefineThreatClass": "T.I.000, Information Disclosure",
+      "SecurityProperties": {
+        "Confidentiality": true
+      },
+      "ActsOn": "Component"
+    }
+  ]
+}

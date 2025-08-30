@@ -1,0 +1,161 @@
+{
+  "ThreatName": "Lateral Movement",
+  "ThreatID": "T.Lm.001",
+  "SubThreats": [
+    {
+      "ThreatName": "Abuse UDS for Lateral Movement",
+      "ThreatID": "T.Lm.002",
+      "AttackFeasibilityLevel": "LOW",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "time is required to discover the vulnerabilities required for this attack"
+        },
+        "SE": {
+          "description": "Knowledge of UDS, general automotive systems, and computational systems is required"
+        },
+        "KoIC": {
+          "description": "In-depth knowledge of the vehicle components, their vulnerabilities, and software is required"
+        },
+        "WoO": {
+          "description": "only limited by the length of time between updates to software"
+        },
+        "Eq": {
+          "description": "Some specialized equipment may be required for this attack"
+        }
+      },
+      "Description": "An attack that uses the UDS of the vehicle to access information from component to component, until the final and intended target is reached",
+      "RefineThreatClass": "T.Lm.001, Lateral Movement",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Bridge Vehicle Networks",
+      "ThreatID": "T.Lm.003",
+      "AttackFeasibilityLevel": "VERY LOW",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "A great deal of time is required for this type of attack assuming appropriate controls are in place"
+        },
+        "SE": {
+          "description": "Automotive, computational, and network knowledge is required for this attack"
+        },
+        "KoIC": {
+          "description": "Highly in-depth information regarding the vehicle must be known"
+        },
+        "WoO": {
+          "description": "dependent on consistent vehicle versions, components, and software"
+        },
+        "Eq": {
+          "description": "Highly specialized equipment is required"
+        }
+      },
+      "Description": "An attack that leverages a pre-compromised vehicle to compromise another one through a network connection",
+      "RefineThreatClass": "T.Lm.001, Lateral Movement",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Exploit ECU for Lateral Movement",
+      "ThreatID": "T.Lm.004",
+      "AttackFeasibilityLevel": "LOW",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "An ecu with proper controls will take time for the attacker to find vulnerabilities"
+        },
+        "SE": {
+          "description": "Attacker must be knowledgeable about automotive and computational systems"
+        },
+        "KoIC": {
+          "description": "Some knowledge about the internal systems of the vehicle must be known"
+        },
+        "WoO": {
+          "description": "Window of opportunity depends on the frequency of updates to the firmware and software"
+        },
+        "Eq": {
+          "description": "Some specialized equipment may be required to exploit the ECU"
+        }
+      },
+      "Description": "An attack that exploits a vulnerability within the ECU to gain access to other component systems",
+      "RefineThreatClass": "T.Lm.001, Lateral Movement",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Remote Services",
+      "ThreatID": "T.Lm.005",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Some time is required to discover a way to be seen as an authentic service connected to the vehicle"
+        },
+        "SE": {
+          "description": "Knowledge about networking and computational systems is required"
+        },
+        "KoIC": {
+          "description": "Some knowledge of the internal systems and controls is required"
+        },
+        "WoO": {
+          "description": "window of opportunity varies depending on frequency of updates"
+        },
+        "Eq": {
+          "description": "Some versions of this attack may require specialized equipment to function"
+        }
+      },
+      "Description": "An attack that leverages remote services connected to the vehicle as an access point",
+      "RefineThreatClass": "T.Lm.001, Lateral Movement",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Reprogram ECU for Lateral Movement",
+      "ThreatID": "T.Lm.006",
+      "AttackFeasibilityLevel": "VERY LOW",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "A great deal of time is required to find a way to successfully complete this attack"
+        },
+        "SE": {
+          "description": "Highly in-depth knowledge about automotive and computational systems is required"
+        },
+        "KoIC": {
+          "description": "In-depth knowledge about the automotive and computational systems of the vehicle is required"
+        },
+        "WoO": {
+          "description": "Window of opportunity varies depending on frequency and quality of updates"
+        },
+        "Eq": {
+          "description": "While it may be possible to complete this type of attack with just a computer, some specialized equipment may be required"
+        }
+      },
+      "Description": "An attack that reprograms the ECU in order to gain access to sensitive data or disrupt vehicle function ",
+      "RefineThreatClass": "T.Lm.001, Lateral Movement",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    }
+  ]
+}

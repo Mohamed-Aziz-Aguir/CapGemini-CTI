@@ -1,0 +1,62 @@
+{
+  "ThreatName": "Repudiation",
+  "ThreatID": "T.R.000",
+  "SubThreats": [
+    {
+      "ThreatName": "Exploitation of repudiation weaknesses",
+      "ThreatID": "T.R.099",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "The exploitation of repudiation weaknesses refers to the act of taking advantage of vulnerabilities or gaps in systems that handle digital signatures, transaction records, or authentication mechanisms to engage in unauthorized actions or transactions and later be able to deny involvement. Exploiting repudiation weaknesses can undermine the trustworthiness of digital interactions and make it difficult to prove or disprove disputed events, actions, or claims.",
+      "RefineThreatClass": "T.R.000, Repudiation",
+      "SecurityProperties": {
+        "Integrity": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Non-Repudiation Mechanism (Software) Bypass",
+      "ThreatID": "TC.1",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": ""
+        },
+        "SE": {
+          "description": ""
+        },
+        "KoIC": {
+          "description": ""
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": ""
+        }
+      },
+      "Description": "Attackers find ways to circumvent or undermine non-repudiation mechanisms in software, allowing them to later deny their involvement in actions, transactions, or events.",
+      "RefineThreatClass": "T.R.000, Repudiation",
+      "SecurityProperties": {
+        "Integrity": true
+      },
+      "ActsOn": ""
+    }
+  ]
+}

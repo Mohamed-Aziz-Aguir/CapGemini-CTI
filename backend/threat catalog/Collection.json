@@ -1,0 +1,347 @@
+{
+  "ThreatName": "Collection",
+  "ThreatID": "T.Co.001",
+  "SubThreats": [
+    {
+      "ThreatName": "Abuse UDS for Collection",
+      "ThreatID": "T.Co.002",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "UDS is a standardized protocol and vulnerabilities are more well-known"
+        },
+        "SE": {
+          "description": "Knowledge of UDS vulnerabilities is required for this attack"
+        },
+        "KoIC": {
+          "description": "No sensitive internal knowledge about the vehicle is required"
+        },
+        "WoO": {
+          "description": "Access to the UDS diagnostic port is required"
+        },
+        "Eq": {
+          "description": "A UDS reader is required"
+        }
+      },
+      "Description": "An attacker abuses UDS to collect sensitive information about the vehicle system or data from the ECU",
+      "RefineThreatClass": "T.Co.001, Collection",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Access Personal Information",
+      "ThreatID": "T.Co.003",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Research from the attacker is required to find a relevant exploit"
+        },
+        "SE": {
+          "description": "Knowledge of vehicle and computational architecture is required"
+        },
+        "KoIC": {
+          "description": "Some knowledge about the control systems is required"
+        },
+        "WoO": {
+          "description": "Flexible window of opportunity depending on the specific attack surface used"
+        },
+        "Eq": {
+          "description": "Typically, only a standard computer is required for this type of attack"
+        }
+      },
+      "Description": "An attack designed to gain access to personal information stored within the vehicles electronic systems",
+      "RefineThreatClass": "T.Co.001, Collection",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Access Vehicle Telemetry",
+      "ThreatID": "T.Co.004",
+      "AttackFeasibilityLevel": "LOW",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Research time is required for this type of attack"
+        },
+        "SE": {
+          "description": "Knowledge of automotive and computational systems is required"
+        },
+        "KoIC": {
+          "description": "Some knowledge about internal control systems may be required"
+        },
+        "WoO": {
+          "description": "Flexible window of opportunity depending on the attack surface"
+        },
+        "Eq": {
+          "description": "Some specialized equipment may be required"
+        }
+      },
+      "Description": "An attack designed to gain access to telemetry data such as vehicle speed, acceleration, location, engine parameters, sensor readings, etc",
+      "RefineThreatClass": "T.Co.001, Collection",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Capture Camera or Audio",
+      "ThreatID": "T.Co.005",
+      "AttackFeasibilityLevel": "LOW",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Some time researching is required"
+        },
+        "SE": {
+          "description": "Knowledge of automotive and computational systems is required"
+        },
+        "KoIC": {
+          "description": "Some knowledge about internal controls is required"
+        },
+        "WoO": {
+          "description": "window of opportunity is flexible depending on the attack surface chosen"
+        },
+        "Eq": {
+          "description": "Some specialized equipment may be required"
+        }
+      },
+      "Description": "An attack designed to access any camera or audio system in a vehicle. Could be used to simply monitor their activity or to inject fraudulent information",
+      "RefineThreatClass": "T.Co.001, Collection",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Capture SMS Message",
+      "ThreatID": "T.Co.006",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "SMS is an established protocol with a variety of known exploits"
+        },
+        "SE": {
+          "description": "Knowledge about SMS protocols is required"
+        },
+        "KoIC": {
+          "description": "Some knowledge about the specific controls used by the vehicle is required, but this information could be easily be found through trial and error by the attacker"
+        },
+        "WoO": {
+          "description": "Can be performed anytime the vehicle sends or receives a message"
+        },
+        "Eq": {
+          "description": "A standard computer is required"
+        }
+      },
+      "Description": "An attack designed to capture SMS messages sent or received by the vehicle",
+      "RefineThreatClass": "T.Co.001, Collection",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Data from Local System",
+      "ThreatID": "T.Co.007",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Research is required for this type of attack"
+        },
+        "SE": {
+          "description": "Knowledge about computational systems is required"
+        },
+        "KoIC": {
+          "description": "Some knowledge about controls within the vehicle may be required"
+        },
+        "WoO": {
+          "description": "Physical access to the vehicle is required"
+        },
+        "Eq": {
+          "description": "Some specialized equipment may be required to extract the targeted data"
+        }
+      },
+      "Description": "An attack designed to harvest data stored within the vehicle through a connected local system",
+      "RefineThreatClass": "T.Co.001, Collection",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Input Capture",
+      "ThreatID": "T.Co.008",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Research is required for this type of attack"
+        },
+        "SE": {
+          "description": "Knowledge about automotive and computational systems are required"
+        },
+        "KoIC": {
+          "description": "Some knowledge about the vehicle's controls may be required"
+        },
+        "WoO": {
+          "description": "Attack could occur whenever input is sent to the vehicle by the end-user"
+        },
+        "Eq": {
+          "description": "Some specialized equipment may be required"
+        }
+      },
+      "Description": "An attack designed to read the input data from the user to the vehicle",
+      "RefineThreatClass": "T.Co.001, Collection",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Location Tracking",
+      "ThreatID": "T.Co.009",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Flexible depending on the attack surface used"
+        },
+        "SE": {
+          "description": "Knowledge about automotive and computational systems is required"
+        },
+        "KoIC": {
+          "description": "Some knowledge about the controls within the vehicle may be required"
+        },
+        "WoO": {
+          "description": "Physical access to the vehicle may be required"
+        },
+        "Eq": {
+          "description": "Some specialized equipment may be required for this attack"
+        }
+      },
+      "Description": "An attack designed to provide the location of the vehicle in real-time, or set intervals; to the attacker",
+      "RefineThreatClass": "T.Co.001, Collection",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Network Information Discovery",
+      "ThreatID": "T.Co.010",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Most vehicles use standardized networking systems, which have known vulnerabilities"
+        },
+        "SE": {
+          "description": "Knowledge about networking systems is required"
+        },
+        "KoIC": {
+          "description": "Some knowledge about the internal controls of the vehicle may be required"
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": "Typically, only a standard computer is required"
+        }
+      },
+      "Description": "An attack designed to find and harvest sensitive data about the network within a vehicle",
+      "RefineThreatClass": "T.Co.001, Collection",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Network Traffic Capture or Redirection",
+      "ThreatID": "T.Co.011",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Most networks follow standardized protocols with known exploits"
+        },
+        "SE": {
+          "description": "Knowledge about networking systems and their exploits is required"
+        },
+        "KoIC": {
+          "description": "Some knowledge about the vehicles controls will be required"
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": "Typically, only a standard computer is required"
+        }
+      },
+      "Description": "An attack designed to capture the traffic in a vehicles network, or redirect the endpoints of that traffic",
+      "RefineThreatClass": "T.Co.001, Collection",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Screen Capture",
+      "ThreatID": "T.Co.012",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Research will be required to perform this attack"
+        },
+        "SE": {
+          "description": "Knowledge about computational systems is required"
+        },
+        "KoIC": {
+          "description": "Some knowledge about the vehicle's controls will be required"
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": "Some specialized equipment may be required depending on the attack surface that is utilized as the access point"
+        }
+      },
+      "Description": "An attack designed to capture the output provided to the end-user for the sake of collecting sensitive data",
+      "RefineThreatClass": "T.Co.001, Collection",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    }
+  ]
+}

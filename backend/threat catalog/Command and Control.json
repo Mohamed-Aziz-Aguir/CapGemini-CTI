@@ -1,0 +1,192 @@
+{
+  "ThreatName": "Command and Control",
+  "ThreatID": "T.Cac.001",
+  "SubThreats": [
+    {
+      "ThreatName": "Aftermarket Customer, or Dealer Equipment",
+      "ThreatID": "T.Cac.002",
+      "AttackFeasibilityLevel": "VERY LOW",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Research and development of a part is required"
+        },
+        "SE": {
+          "description": "Knowledge about automotive and computational systems is required"
+        },
+        "KoIC": {
+          "description": "Knowledge of the vehicles control's is required"
+        },
+        "WoO": {
+          "description": "Physical access to the vehicle is required"
+        },
+        "Eq": {
+          "description": "Specialized equipment is required"
+        }
+      },
+      "Description": "An attack designed to control the vehicle through the installation of non-OEM parts in the vehicle ",
+      "RefineThreatClass": "T.Cac.001, Command and Control",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Cellular Communication",
+      "ThreatID": "T.Cac.003",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Cellular systems typically follow standardized protocols with known exploits, but additional research time may be required for the specific implementation"
+        },
+        "SE": {
+          "description": "Knowledge of cellular communication systems is required"
+        },
+        "KoIC": {
+          "description": "Some knowledge about the vehicle's controls may be required"
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": "Some specialized equipment may be required"
+        }
+      },
+      "Description": "An attack designed to control the cellular communication input/output to and from the vehicle PUF 10: HITRUST Threat Catalogue (2022) HITRUST Alliance. Available at: https://hitrustalliance.net/hitrust-threat-catalogue/ (Accessed: 30 October 2023). ",
+      "RefineThreatClass": "T.Cac.001, Command and Control",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Internet Communication",
+      "ThreatID": "T.Cac.004",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Internet protocols and their exploits are documented, but the specific implementation may require additional research"
+        },
+        "SE": {
+          "description": "Knowledge of traditional internet networking is required"
+        },
+        "KoIC": {
+          "description": "some knowledge about the vehicle's controls may be required"
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": "Some specialized equipment may be required"
+        }
+      },
+      "Description": "An attack designed to control the internet communication to and from the vehicle",
+      "RefineThreatClass": "T.Cac.001, Command and Control",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Receive-Only Communication Channel",
+      "ThreatID": "T.Cac.005",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Channel protocols and exploits are generally well documented"
+        },
+        "SE": {
+          "description": "Knowledge about communication channels and networking is required"
+        },
+        "KoIC": {
+          "description": "Some knowledge about the vehicle's controls may be required"
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": "Some specialized equipment may be required"
+        }
+      },
+      "Description": "An attack designed to harvest information sent to the receive only communication channel",
+      "RefineThreatClass": "T.Cac.001, Command and Control",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Short Range Wireless Communication",
+      "ThreatID": "T.Cac.006",
+      "AttackFeasibilityLevel": "MEDIUM",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Short range wireless protocols are well documented; including their weaknesses and potential exploits"
+        },
+        "SE": {
+          "description": "Knowledge about automotive systems and short range protocols are required"
+        },
+        "KoIC": {
+          "description": "Some knowledge about the vehicle's controls may be required"
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": "Some specialized equipment may be required"
+        }
+      },
+      "Description": "an attack designed to collect and harvest sensitive information stored within the vehicle through the user of short range wireless communication protocols",
+      "RefineThreatClass": "T.Cac.001, Command and Control",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    },
+    {
+      "ThreatName": "Standard Cryptographic Protocol",
+      "ThreatID": "T.Cac.007",
+      "AttackFeasibilityLevel": "VERY LOW",
+      "FeasibilityRating": {
+        "ET": {
+          "description": "Research into the specific implementation of well documented cryptography standards is required. Then additional time must be spent to obtain the key"
+        },
+        "SE": {
+          "description": "Knowledge of automotive, computational, and cryptographic systems is required"
+        },
+        "KoIC": {
+          "description": "Detailed knowledge about the vehicle's control systems is required"
+        },
+        "WoO": {
+          "description": ""
+        },
+        "Eq": {
+          "description": "Some specialized equipment may be required"
+        }
+      },
+      "Description": "An attack designed to harvest and control the cryptographic protocols used within a vehicle",
+      "RefineThreatClass": "T.Cac.001, Command and Control",
+      "SecurityProperties": {
+        "Confidentiality": true,
+        "Integrity": true,
+        "Authenticity": true,
+        "Availability": true
+      },
+      "ActsOn": ""
+    }
+  ]
+}
