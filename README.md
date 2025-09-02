@@ -72,8 +72,6 @@ backend/
 ├─ requirements.txt
 └─ README.md <-- (this file)
 
-yaml
-Copy code
 
 > Note: exact file names may vary; README assumes the file structure you provided.
 
@@ -88,8 +86,7 @@ Recommended to run on **Ubuntu** (development tested there). Production can be o
 sudo apt update
 sudo apt install -y build-essential curl git python3 python3-venv python3-dev
 🐍 Python virtualenv installation (dev)
-bash
-Copy code
+
 # from backend/
 python3 -m venv .venv
 source .venv/bin/activate
@@ -100,7 +97,6 @@ pip install -r requirements.txt
 requirements.txt should include (examples):
 
 makefile
-Copy code
 fastapi==0.116.1
 uvicorn[standard]
 elasticsearch[async]==8.13.0
@@ -114,7 +110,6 @@ pydantic
 Create .env in backend/:
 
 ini
-Copy code
 # .env
 # Application
 APP_ENV=development
@@ -140,8 +135,7 @@ FastAPI app uses app.core.elasticsearch_client to read ES config. If es.indices.
 
 🔁 Docker (optional)
 docker-compose (example)
-yaml
-Copy code
+
 version: "3.8"
 services:
   elasticsearch:
@@ -187,20 +181,17 @@ CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload
 ▶️ Running backend locally (dev)
 Ensure Elasticsearch is running (local Docker or system):
 
-bash
-Copy code
+
 docker run -d --name es -p 9200:9200 \
   -e "discovery.type=single-node" \
   docker.elastic.co/elasticsearch/elasticsearch:8.13.0
 Start Redis (optional):
 
-bash
-Copy code
+
 docker run -d --name redis -p 6379:6379 redis:7-alpine
 Start backend (venv):
 
-bash
-Copy code
+
 source .venv/bin/activate
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 Visit OpenAPI docs:
@@ -269,18 +260,16 @@ query optional: when empty or omitted, returns all (limited default size).
 
 Example: list all
 
-bash
-Copy code
+
 curl -X GET "http://localhost:8000/zeroday/search?query=" -H "accept: application/json"
 Example: search
 
-bash
-Copy code
+
 curl -X GET "http://localhost:8000/zeroday/search?query=Electric%20Vehicle%20Chargers" -H "accept: application/json"
 Response:
 
 json
-Copy code
+
 {
   "count": 96,
   "results": [
@@ -299,14 +288,10 @@ GET /threat-catalog/get?category=<index_name> (case-insensitive)
 category is the ES index name (e.g. execution, persistence, defense_ecasion).
 
 Example:
-
-bash
-Copy code
 curl -X GET "http://localhost:8000/threat-catalog/get?category=execution" -H "accept: application/json"
 Response: Array of documents from that index, e.g.:
 
 json
-Copy code
 [
   {
     "ThreatName": "Execution",
@@ -322,25 +307,16 @@ If q matches CVE-YYYY-NNNN exact format, returns exact-match results.
 Otherwise keyword multi_match.
 
 Example:
-
-bash
-Copy code
 curl -X GET "http://localhost:8000/api/search/all?q=&page=1&page_size=10" -H "accept: application/json"
 Response: includes results and pagination block.
 
 4. IOC analysis
 POST /api/ioc/analyze
 Payload (JSON):
-
-json
-Copy code
 { "value": "8.8.8.8" }
 Important: Backend expects value (not ioc). If your front end was sending { ioc: "..." } you'll get 422. Fix: send { value: ... }.
 
 Response:
-
-json
-Copy code
 {
   "ioc": "8.8.8.8",
   "otx": { ... },
@@ -361,8 +337,6 @@ Fix: Update frontend to axios.post("/api/ioc/analyze", { value: input }) or chan
 Cause: Frontend used parameter name q, while backend expects query.
 Fix: Ensure frontend calls /zeroday/search with params: { query: term } (or update lib/api.ts to use query param). Example:
 
-ts
-Copy code
 axios.get(`${API_BASE}/zeroday/search`, { params: { query: term } })
 3. Threat catalog button names vs ES indices
 You had a mismatch between the index names and UI button labels. Keep the exact index names (including defense_ecasion typo) in the frontend categories array to map to ES indices. If you correct the ES index name, update both ES and frontend mapping.
@@ -383,9 +357,6 @@ FastAPI handles CORS for the frontend by default in app/main.py (currently allow
 This is optional. Only required if you want the local private assistant.
 
 Clone and build llama.cpp
-
-bash
-Copy code
 git clone https://github.com/ggerganov/llama.cpp.git
 cd llama.cpp
 # on Linux, with curl support to fetch HF models via repo id:
@@ -398,8 +369,6 @@ Download manually from Hugging Face (or use llama.cpp curl helpers).
 
 Run llama-server
 
-bash
-Copy code
 # example path adjustments
 cd ~/CTI/backend/models/llama.cpp/llama.cpp-master/build/bin
 ./llama-server \
