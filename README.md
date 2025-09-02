@@ -82,6 +82,9 @@ Primary tech used in the project:
     /core
       elasticsearch_client.py
       config.py
+    /models
+      /lilly/
+      /llama.cpp/
   requirements.txt
   setup_backend_fixed.sh
   docker-compose.yml
@@ -95,35 +98,6 @@ Primary tech used in the project:
 README.md
 LICENSE
 ```
-
----
-
-## Quick Start — one-shot bootstrap (Ubuntu)
-
-> A bootstrap script `setup_backend_fixed.sh` (included in `/backend`) automates most setup steps: Docker (Elasticsearch & Redis), Python venv, pip dependencies, `.env` creation, and starting `uvicorn`.
-
-From `backend/` directory:
-
-```bash
-# Make sure to be inside backend/ folder
-cd backend
-
-# Single-shot bootstrap (creates docker-compose, starts ES & Redis, creates venv, installs deps, starts uvicorn):
-bash setup_backend_fixed.sh
-
-# Optional: clone & build llama.cpp (no model download)
-bash setup_backend_fixed.sh with-lilly
-```
-
-**What the script does**
-
-- Installs Docker if missing (Ubuntu/Debian).  
-- Creates `docker-compose.yml` for Elasticsearch 8.13.0 and Redis.  
-- Starts containers.  
-- Creates a Python virtualenv in `.venv` and installs pinned dependencies from `requirements.txt`.  
-- Generates a `.env` file with safe defaults.  
-- Starts `uvicorn` (backend) in background and writes `uvicorn.pid` for convenience.  
-- (Optional) clones and builds `llama.cpp` if `with-lilly` is passed.
 
 ---
 
@@ -149,21 +123,6 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip setuptools wheel
 pip install -r requirements.txt
-```
-
-**Suggested `requirements.txt`**
-
-```
-fastapi==0.116.1
-uvicorn[standard]==0.23.2
-elasticsearch[async]==8.13.0
-httpx==0.24.1
-aiohttp==3.8.4
-redis==5.0.4
-python-dotenv==1.0.0
-pydantic==1.10.11
-# optional:
-# llama_cpp_python==0.3.16
 ```
 
 ### 3. Environment variables
