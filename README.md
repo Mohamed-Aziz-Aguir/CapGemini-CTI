@@ -7,7 +7,7 @@
 **Repository:** https://github.com/Mohamed-Aziz-Aguir/CapGemini-CTI
 
 **Primary contact:** Mohamed Aziz Aguir — `mohamedaziz.aguir@outlook.com`   
-                     Yahya Kaddour — 'yahyakaddour5@gmail.com'
+                     Yahya Kaddour — `yahyakaddour5@gmail.com`
 
 **Project timeline:** Start: `2025-06-23` — End: *(today / ongoing)*
 
