@@ -6,135 +6,151 @@ University: ESPRIT
 Supervisor: Mohamed Amine Boussaid
 Repository: https://github.com/Mohamed-Aziz-Aguir/CapGemini-CTI
 
-Project start: 2025-06-23 — Project end: today (ongoing)
+Primary contact: Mohamed Aziz Aguir — mohamedaziz.aguir@outlook.com — +216 93 236 576
+(Add Yahya Kaddour contact details to the repo CONTRIBUTORS file if desired.)
 
-Project contact: Mohamed Aziz Aguir — mohamedaziz.aguir@outlook.com
- — +216 93 236 576
-(Yahya Kaddour contact: please add email/phone in repo CONTRIBUTORS or .env if needed)
+Project timeline: Start: 2025-06-23 — End: (today / ongoing)
 
-Overview
+Table of Contents
 
-This project is a full-stack Cyber Threat Intelligence (CTI) dashboard consisting of:
-
-Backend: FastAPI (Python) microservice for ingestion, search, threat catalogs, IOC analysis and optional local LLM (Lilly) integration.
-
-Search / Storage: Elasticsearch v8.x for indexing and fast queries.
-
-Cache / PubSub: Redis (optional) for caching and background tasks.
-
-Frontend: Next.js + React UI for browsing threat catalogs, IOC analysis, Zero-Day tracker, news, and Chatbot popup.
-
-Optional AI: Local LLM server based on llama.cpp to host Lilly (Lily-Cybersecurity model) for offline assistant usage.
-
-This README documents setup and how to run everything locally (Ubuntu), full API documentation, dev tips, and references.
-
-Table of contents
+Project Overview
 
 Tech stack & Versions
 
-Repository structure
+Repository layout
 
-Quick start (one-shot)
+Quick Start — one-shot bootstrap (Ubuntu)
 
-Backend — detailed setup & run
+Manual Setup (detailed)
 
-Frontend — detailed setup & run
+Backend — config & endpoints
 
-Optional: Local LLM (Lilly) with llama.cpp
+Frontend — config & fixes
 
-API Reference (main endpoints & examples)
+Elasticsearch indices & data model
 
-Indices & data model (Elasticsearch)
+Optional: Local LLM (Lilly) using llama.cpp (instructions)
 
-Troubleshooting & common issues
+Dev scripts & convenience commands
 
-Development notes & tips
+Architecture diagrams (Mermaid)
 
-Contributors & acknowledgements
+Troubleshooting & FAQ
 
-License & External resources
+Credits & External Resources
 
-Tech stack & Versions
+License & Next steps
 
-Main runtime and dependencies used in this project:
+Project overview
 
-Python 3.13 (development environment)
+This project is a full-stack Cyber Threat Intelligence (CTI) Dashboard built as a Capgemini school/industry project (ESPRIT). It provides:
 
-FastAPI 0.116.1 — backend web framework
+IOC analysis (caching + third-party lookups)
 
-Uvicorn for ASGI HTTP server
+Zero-day browsing and keyword search
 
-Elasticsearch 8.13.0 — primary datastore / search index
+Threat catalog browsing per ATT&CK-like categories (each category stored in Elasticsearch)
 
-Redis 5.0.4 — optional caching/queue
+CVE search and browsing with pagination
 
-Next.js (React) — frontend (client)
+Optional local LLM (Lilly) integration built on llama.cpp and a GGUF model
 
-axios, framer-motion, tailwindcss (frontend styling)
+Frontend UI built with Next.js (React), styled with TailwindCSS, animations via Framer Motion
 
-llama.cpp & GGUF model (optional local LLM) — Nekuromento/Lily-Cybersecurity-7B-v0.2-Q8_0-GGUF
+Tech stack & versions
 
-llama_cpp_python (optional Python bindings) – 0.3.16 (if used in Python)
+Primary tech used in the project:
 
-httpx for HTTP calls in backend.
+Python — 3.13
 
-Pin versions you used in requirements.txt or equivalent for reproducibility.
+FastAPI — 0.116.1
 
-Repository structure (high level)
+Uvicorn — latest compatible (0.23.x)
+
+Elasticsearch — 8.13.0 (Docker image used)
+
+Redis — (Redis 7.x container; Python client redis==5.0.4)
+
+llama_cpp_python — 0.3.16 (optional, for local LLM bindings)
+
+Frontend — Next.js (React), TailwindCSS, Framer Motion, Axios
+
+OS — Ubuntu (development & server)
+
+All external resources and third-party projects must be used according to their licenses. See the Credits section for links.
+
+Repository layout (recommended)
 /backend
   /app
+    main.py
     /api
-      routes/         # FastAPI routers (ioc, zeroday, threat-catalog, lilly, search, news, ...)
-    /services         # Business logic (otx_service, virustotal_service, zeroday_service, cve_service, lilly_service)
-    /core             # elasticsearch client wrapper, config
-    main.py           # FastAPI app
+      ioc.py
+      zeroday.py
+      threat_catalog.py
+      search.py
+      lilly.py
+      news.py
+    /services
+      zeroday_service.py
+      cve_service.py
+      otx_service.py
+      virustotal_service.py
+      lilly_service.py
+    /core
+      elasticsearch_client.py
+      config.py
   requirements.txt
-  setup_backend_fixed.sh  # one-shot bootstrap script (provided)
-  .env               # configuration (not committed)
-  docker-compose.yml # created by script or provided
+  setup_backend_fixed.sh  # bootstrap helper (optional)
+  docker-compose.yml
+  .env.example
 /frontend
   /components
-  /pages (or app)    # Next.js pages
-  lib/api.ts         # central API client for frontend
+  /pages or /app
+  lib/api.ts
   package.json
   tailwind.config.js
-README.md            # <-- you are editing this
+README.md
+LICENSE
 
-Quick start (copy-paste friendly)
-Option A — Automatic bootstrap (Ubuntu/Debian)
+Quick Start — one-shot bootstrap (Ubuntu)
 
+A bootstrap script setup_backend_fixed.sh (included in /backend) automates most setup steps: Docker (Elasticsearch & Redis), Python venv, pip dependencies, .env creation, and starting uvicorn.
+
+From backend/ directory:
+
+# Make sure to be inside backend/ folder
 cd backend
 
-Paste & run the provided script (already included in the repo as setup_backend_fixed.sh) or copy-paste the script content and run:
-
-# from backend/ directory
+# Single-shot bootstrap (creates docker-compose, starts ES & Redis, creates venv, installs deps, starts uvicorn):
 bash setup_backend_fixed.sh
-# or optionally with llama.cpp build (no model downloaded)
+
+# Optional: clone & build llama.cpp (no model download)
 bash setup_backend_fixed.sh with-lilly
 
 
-This script will:
+What the script does
 
-Install Docker if missing (Ubuntu)
+Installs Docker if missing (Ubuntu/Debian).
 
-Create docker-compose.yml with Elasticsearch 8.13.0 and Redis
+Creates docker-compose.yml for Elasticsearch 8.13.0 and Redis.
 
-Start Elasticsearch + Redis
+Starts containers.
 
-Create Python virtualenv at .venv, install pinned requirements
+Creates a Python virtualenv in .venv and installs pinned dependencies from requirements.txt.
 
-Create a default .env file (edit for API keys)
+Generates a .env file with safe defaults.
 
-Start Uvicorn (FastAPI) on http://0.0.0.0:8000
+Starts uvicorn (backend) in background and writes uvicorn.pid for convenience.
 
-If you prefer manual steps, see the detailed sections below.
+(Optional) clones and builds llama.cpp if with-lilly is passed.
 
-Option B — Manual (recommended if customizing)
+If you prefer manual setup, see the manual setup section below.
 
-Start Elasticsearch + Redis (Docker):
+Manual Setup (detailed)
+1. Docker (Elasticsearch + Redis)
 
-# backend/
-cat > docker-compose.yml <<'YAML'
+Create backend/docker-compose.yml (or use the provided) to run ES & Redis:
+
 version: "3.8"
 services:
   elasticsearch:
@@ -147,47 +163,51 @@ services:
       - "9200:9200"
     volumes:
       - esdata:/usr/share/elasticsearch/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sSf http://localhost:9200/ || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
   redis:
     image: redis:7-alpine
     ports:
       - "6379:6379"
+
 volumes:
   esdata:
-YAML
+
+
+Start:
 
 docker compose up -d
+# wait until Elasticsearch healthy:
+curl -sSf http://localhost:9200/
 
-
-Create Python venv and install:
-
+2. Python virtualenv & dependencies
+cd backend
 python3 -m venv .venv
 source .venv/bin/activate
-pip install --upgrade pip
+pip install --upgrade pip setuptools wheel
 pip install -r requirements.txt
 
 
-Create .env (sample exists or generated by script). Fill API keys (VirusTotal, OTX) if used.
+Suggested requirements.txt
 
-Start backend:
+fastapi==0.116.1
+uvicorn[standard]==0.23.2
+elasticsearch[async]==8.13.0
+httpx==0.24.1
+aiohttp==3.8.4
+redis==5.0.4
+python-dotenv==1.0.0
+pydantic==1.10.11
+# optional:
+# llama_cpp_python==0.3.16
 
-uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+3. Environment variables
 
-
-Start frontend (from /frontend):
-
-npm install
-npm run dev
-# or
-pnpm install
-pnpm dev
-
-
-Frontend default runs on http://localhost:3000.
-
-Backend — detailed setup & run
-Environment
-
-Create .env in backend/:
+Create .env (or copy .env.example) inside backend/:
 
 APP_ENV=development
 DEBUG=true
@@ -195,6 +215,9 @@ HOST=0.0.0.0
 PORT=8000
 
 ES_HOST=http://localhost:9200
+ES_USERNAME=
+ES_PASSWORD=
+
 REDIS_URL=redis://localhost:6379/0
 
 VT_API_KEY=
@@ -202,181 +225,124 @@ OTX_API_KEY=
 
 LILLY_SERVER_URL=http://localhost:8080
 
+PROJECT_AUTHORS="Mohamed Aziz Aguir & Yahya Kaddour"
+PROJECT_CONTACT="mohamedaziz.aguir@outlook.com"
+PROJECT_SUPERVISOR="Mohamed Amine Boussaid"
 
-Make sure Elasticsearch is healthy at http://localhost:9200.
+4. Start Backend (development)
 
-Elasticsearch client
+Activate venv and run:
 
-Your backend uses an Async Elasticsearch client cached in app/core/elasticsearch_client.py. Ensure correct host / auth values pulled from .env.
+source .venv/bin/activate
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 
-Routes (examples)
 
-/api/ioc/analyze — POST for IOC analysis
+Open API docs: http://localhost:8000/docs
 
-/zeroday/search — GET for Zero-Day search (query param query)
+5. Frontend (development)
 
-/threat-catalog/get — GET for threat catalog (query param category)
+From /frontend:
 
-/api/lilly/chat — Chat endpoint to Lilly (streams)
+# if you use npm
+npm install
+npm run dev
 
-/api/search/all — CVE search/browse
+# or with pnpm
+pnpm install
+pnpm dev
 
-See API docs: http://localhost:8000/docs
 
-Services
+Open http://localhost:3000 (or your Next.js dev port).
 
-zeroday_service.py — searches zeroday index, returns hits
+Backend — configuration & endpoints
 
-cve_service.py — CVE search with pagination
+Key routers are included in app/main.py:
 
-threat_catalog_service.py — fetch threat category indices
+app.include_router(news_router.router, prefix="/news", tags=["News"])
+app.include_router(ioc.router, prefix="/api/ioc", tags=["IOC"])
+app.include_router(lilly.router, prefix="/api/lilly", tags=["Lilly"])
+app.include_router(zeroday_router.router, prefix="/zeroday", tags=["Zero-Day"])
+app.include_router(threat_catalog.router, prefix="/threat-catalog", tags=["Threat Catalog"])
+app.include_router(search.router, prefix="/api/search", tags=["Search & Browse"])
 
-lilly_service.py — robust streaming/backfill for the local LLM backend (llama server)
+Important endpoints
 
-Frontend — setup & run
+POST /api/ioc/analyze — Body: { "value": "github.com" }
+Returns: { ioc, otx, virustotal } — ES cache first, fallback to external APIs.
 
-The frontend is a Next.js app with pages:
+GET /zeroday/search?query=<keyword or ZDI-CAN-####>
+If query omitted or empty — returns all zero-days (backend service supports optional query).
+Response structure: { "count": <n>, "results": [ { zero_day_id, cve, category, impact }, ... ] }
 
-/ioc — IOC analyzer page
+GET /threat-catalog/get?category=<index>
+category must match ES index name (case-insensitive mapping done in route). Example: category=execution
 
-/threat-catalog — browse threat categories
+GET /api/search/all?q=<query>&page=1&page_size=10
+CVE search with pagination (returns results and pagination metadata).
 
-/zeroday — zero-day tracker
+POST /api/lilly/chat — Chat to local Lilly (if set up) — implement as required on server side.
 
-Chatbot popup uses API /api/lilly/chat
+Frontend — recommended fixes & lib/api.ts (important)
 
-API client
+IMPORTANT: The Zero-Day backend expects parameter name query. Ensure frontend calls use params: { query: <value> } when hitting /zeroday/search.
 
-/lib/api.ts contains axios-based functions and uses NEXT_PUBLIC_API_BASE_URL environment variable or defaults to http://localhost:8000.
+Copy/paste this lib/api.ts into /frontend/lib/api.ts:
 
-Example:
+// /frontend/lib/api.ts
+import axios from "axios";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
+
+export async function getNews(limit = 10) {
+  const res = await axios.get(`${API_BASE}/news/`, { params: { limit } });
+  return res.data;
+}
+
+export async function analyzeIoc(ioc: string) {
+  const res = await axios.post(`${API_BASE}/api/ioc/analyze`, { value: ioc });
+  return res.data;
+}
+
+// Backend expects `query` param for zero-day
+export async function searchZeroDay(q: string) {
+  const res = await axios.get(`${API_BASE}/zeroday/search`, { params: { query: q } });
+  return res.data;
+}
 
 export async function getThreatCatalog(category: string) {
   const res = await axios.get(`${API_BASE}/threat-catalog/get`, { params: { category } });
   return res.data;
 }
 
-export async function searchZeroDay(q: string) {
-  const res = await axios.get(`${API_BASE}/zeroday/search`, { params: { query: q } });
+export async function searchAll(q: string, page = 1, page_size = 10) {
+  const res = await axios.get(`${API_BASE}/api/search/all`, {
+    params: { q, page, page_size },
+  });
   return res.data;
 }
 
-
-Ensure frontend calls use param names expected by the backend (e.g., query, category, etc.)
-
-Run
-
-From /frontend:
-
-npm install
-npm run dev
-# or with pnpm/yarn accordingly
+export default {
+  getNews,
+  analyzeIoc,
+  searchZeroDay,
+  getThreatCatalog,
+  searchAll,
+};
 
 
-Open http://localhost:3000.
+Zero-Day frontend behavior
 
-Optional: Local LLM (Lilly) with llama.cpp
+To list all zero-days, call searchZeroDay("") (backend service supports empty query and will return all docs).
 
-Note: This is optional. Local LLM requires a large model download (GGUF) and llama.cpp compiled binaries.
+To search by keyword (e.g. electric), call searchZeroDay("electric").
 
-Steps (high-level):
+To search by ID (e.g. ZDI-CAN-26359), call searchZeroDay("ZDI-CAN-26359").
 
-Clone & build llama.cpp:
+Common bug: If frontend receives { count: 96, results: [...] }, ensure code uses response.data.results when mapping to UI items.
 
-git clone https://github.com/ggerganov/llama.cpp
-cd llama.cpp
-# optional compile options (LLAMA_CUDA=1 for CUDA, LLAMA_CURL=1):
-LLAMA_CURL=1 make
-# on machines without GPUs, default build is fine
+Elasticsearch indices & data model
 
-
-Download the GGUF model from Hugging Face:
-
-Model used: Nekuromento/Lily-Cybersecurity-7B-v0.2-Q8_0-GGUF
-You must have the right to download the model from Hugging Face and place it in backend models folder:
-
-mkdir -p ~/CTI/backend/models/lilly
-# Download manually via browser or HF CLI and move here:
-# Example (if using HF CLI with credentials):
-# hf_hub_download --repo_id Nekuromento/Lily-Cybersecurity-7B-v0.2-Q8_0-GGUF --filename lily-cybersecurity-7b-v0.2-q8_0.gguf --repo_type=model
-mv lily-cybersecurity-7b-v0.2-q8_0.gguf ~/CTI/backend/models/lilly/
-
-
-Start llama-server:
-
-cd ~/CTI/backend/models/llama.cpp/build/bin
-./llama-server \
-  -m ~/CTI/backend/models/lilly/lily-cybersecurity-7b-v0.2-q8_0.gguf \
-  --host 0.0.0.0 \
-  --port 8080 \
-  --ctx-size 4096 \
-  --n-gpu-layers 0
-
-
-Configure backend .env LILLY_SERVER_URL=http://localhost:8080 and restart backend.
-
-Notes & credits
-
-llama.cpp repo: https://github.com/ggerganov/llama.cpp
-
-Model: https://huggingface.co/Nekuromento/Lily-Cybersecurity-7B-v0.2-Q8_0-GGUF
-
-Make sure you comply with the model license and Hugging Face terms before downloading and using.
-
-API Reference (select endpoints & examples)
-/zeroday/search (GET)
-
-Search zero-day index. Param: query (optional). If omitted or empty, returns all results (or first N).
-
-Example:
-
-GET /zeroday/search?query=electric
-
-
-Response:
-
-{
-  "count": 96,
-  "results": [
-    {"zero_day_id":"ZDI-CAN-26359","cve":"Not yet assigned","category":"Electric Vehicle Chargers","impact":"Bypass authentication on the system."},
-    ...
-  ]
-}
-
-/threat-catalog/get (GET)
-
-Get entire threat catalog for given category index:
-
-GET /threat-catalog/get?category=execution
-
-
-Returns list of top-level threat docs (each may contain SubThreats array).
-
-/api/ioc/analyze (POST)
-
-Analyze an IOC using OTX and VirusTotal services. Body:
-
-{ "value": "github.com" }
-
-/api/lilly/chat (POST)
-
-Chat with Lilly (local LLM). Streaming and non-streaming modes supported. See app/services/lilly_service.py for streaming logic.
-
-Indices & data model (Elasticsearch)
-
-The backend expects certain indices (names exactly as in ES):
-
-asrg-cve (CVE database)
-
-zeroday
-
-otx-iocs
-
-vt-iocs
-
-Threat catalog indices:
+Indices used (exact names are the ones found in your ES cluster; some contain typos that are preserved here):
 
 execution
 
@@ -390,7 +356,7 @@ collection
 
 command_and_control
 
-defense_ecasion (typo: index name intentionally kept to match your ES)
+defense_ecasion (typo preserved)
 
 credential_access
 
@@ -410,46 +376,168 @@ repudiation
 
 manipulate_environment
 
-Each threat doc typically contains top-level fields like ThreatName, ThreatID, and SubThreats (an array of sub-threat entries with ThreatName, ThreatID, AttackFeasibilityLevel, FeasibilityRating, Description, SecurityProperties).
+zeroday
 
-Troubleshooting & common issues
+asrg-cve
 
-404 from /zeroday/search: Ensure backend route is mounted under /zeroday and frontend calls use ?query= param name exactly. In lib/api.ts, searchZeroDay() should call params: { query: q }.
+otx-iocs
 
-Empty frontend results: Confirm backend returns {"count": N, "results": [...]} and frontend uses response.data.results.
+vt-iocs
 
-Elasticsearch not found / 500 errors: Check Docker container status docker compose ps and logs docker compose -f docker-compose.yml logs elasticsearch.
+newsupstream (if present)
 
-CORS: Backend includes CORS middleware; ensure frontend base URL matches NEXT_PUBLIC_API_BASE_URL or uses defaults.
+Zero-day index sample document (from your data):
 
-Lilly streaming issues: If streaming yields funky characters or spacing, use the refined token-cleaning logic in app/services/lilly_service.py (already included). If llama-server binary fails, ensure the GGUF model path is correct and the server supports SSE / chunked streaming.
+{
+  "zero_day_id": "ZDI-CAN-26359",
+  "cve": "Not yet assigned",
+  "category": "Electric Vehicle Chargers",
+  "impact": "Bypass authentication on the system."
+}
 
-Docker permission error: If your user added to docker group, log out and back in (or restart the shell).
 
-Development notes & tips
+Threat-catalog sample document (top-level):
 
-Use the included setup_backend_fixed.sh for reproducible environment on Ubuntu.
+{
+  "ThreatName": "Persistence",
+  "ThreatID": "T.P.001",
+  "SubThreats": [
+    {
+      "ThreatName": "Abuse UDS For Persistence",
+      "ThreatID": "T.P.002",
+      "AttackFeasibilityLevel": "HIGH",
+      "FeasibilityRating": {
+        "ET": { "description": "..." },
+        "SE": { "description": "..." },
+        "KoIC": { "description": "..." }
+      },
+      "Description": "...",
+      "RefineThreatClass": "T.P.001, Persistence",
+      "SecurityProperties": { "Confidentiality": true, "Integrity": true },
+      "ActsOn": ""
+    }
+  ]
+}
 
-Keep .env out of version control — store API keys using GitHub Secrets in production.
+Optional: Local LLM (Lilly) with llama.cpp
 
-For heavy indexing of CVEs and Zero-Day data, prepare bulk index scripts to push JSON to ES (via _bulk API).
+Model: Nekuromento/Lily-Cybersecurity-7B-v0.2-Q8_0-GGUF (Hugging Face).
+Note: Model download is manual — follow Hugging Face rules and authentication.
 
-Use Kibana or Elastic's Dev Tools when debugging indices (optional).
+Steps (short summary):
 
-For frontend structure, keep lib/api.ts as a single source of truth for backend endpoints. That makes swapping base URLs for staging easier.
+Clone llama.cpp:
 
-Contributors & acknowledgements
+git clone https://github.com/ggerganov/llama.cpp.git
+cd llama.cpp
+LLAMA_CURL=1 make
 
-Mohamed Aziz Aguir — main dev & contact (mohamedaziz.aguir@outlook.com
-)
 
-Yahya Kaddour — co-author
+Download the GGUF model file from Hugging Face (requires permission/accepting license) and place it at:
 
-Supervisor: Mohamed Amine Boussaid
+backend/models/lilly/lily-cybersecurity-7b-v0.2-q8_0.gguf
 
-Work performed at Capgemini as a project (study at ESPRIT)
 
-Third-party projects & references
+Run the llama-server:
+
+cd backend/models/llama.cpp/build/bin
+./llama-server \
+  -m ~/CTI/backend/models/lilly/lily-cybersecurity-7b-v0.2-q8_0.gguf \
+  --host 0.0.0.0 \
+  --port 8080 \
+  --ctx-size 4096 \
+  --n-gpu-layers 0
+
+
+Configure backend .env:
+
+LILLY_SERVER_URL=http://localhost:8080
+
+
+Backend lilly route should POST to local server for generation. See app/services/lilly_service.py for details.
+
+Dev scripts & convenience commands
+
+Start Elasticsearch & Redis:
+
+docker compose up -d
+
+
+Stop:
+
+docker compose down
+
+
+Start backend (dev):
+
+source .venv/bin/activate
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+
+
+Show uvicorn logs (if script started uvicorn in background):
+
+tail -f uvicorn.log
+
+
+Recreate venv & install:
+
+rm -rf .venv
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+Architecture diagrams (Mermaid)
+
+You can paste these Mermaid diagrams in GitHub markdown (GitHub supports Mermaid in markdown):
+
+High-level diagram
+
+graph TD
+  Browser[User Browser] -->|REST / WebSocket| Frontend[Frontend (Next.js)]
+  Frontend -->|REST| Backend[Backend (FastAPI)]
+  Backend -->|Elasticsearch queries| ES[Elasticsearch 8.13]
+  Backend -->|Cache| Redis[Redis]
+  Backend -->|OTX/VT HTTP| External[External APIs (OTX, VirusTotal)]
+  Backend -->|LLM API| Lilly[Lilly (llama-server)]
+  Lilly -->|GGUF model file| Model[GGUF model]
+
+
+Component flow (Zero-Day)
+
+sequenceDiagram
+  participant U as User
+  participant F as Frontend
+  participant B as Backend (FastAPI)
+  participant ES as Elasticsearch
+
+  U->>F: type "electric"
+  F->>B: GET /zeroday/search?query=electric
+  B->>ES: search zeroday index
+  ES-->>B: returns hits
+  B-->>F: {count, results}
+  F-->>U: render list
+
+Troubleshooting & FAQ
+
+Q: Frontend requests to /zeroday/search?query=... return 404 while Swagger works.
+A: Common causes:
+
+Frontend lib/api.ts used wrong param name (must use params: { query: q }). Fix shown above.
+
+CORS / proxy mismatch: ensure dev server uses correct NEXT_PUBLIC_API_BASE_URL or uses relative calls if frontend dev server proxies backend.
+
+Path prefix mismatch: backend router is mounted at /zeroday in app/main.py — ensure calls target /zeroday/search.
+
+Q: Elasticsearch index missing or 500 errors.
+A: Confirm ES container is healthy (docker compose logs elasticsearch), ensure enough memory for ES, check index names (typos matter). Use curl http://localhost:9200/_cat/indices?v to inspect indices.
+
+Q: defense_ecasion vs defense_evasion typo:
+A: The project keeps the index name as-is to match the ES indices you already have. If you want to standardize, create a new index defense_evasion and reindex the data, then update backend lists.
+
+Q: Lilly / model issues:
+A: Download GGUF model manually, ensure hardware requirements (RAM / GPU) are sufficient, build llama.cpp with proper flags.
+
+Credits & External Resources
 
 FastAPI — https://fastapi.tiangolo.com/
 
@@ -461,69 +549,82 @@ Redis — https://redis.io/
 
 llama.cpp — https://github.com/ggerganov/llama.cpp
 
-Model: Nekuromento/Lily-Cybersecurity-7B-v0.2-Q8_0-GGUF — https://huggingface.co/Nekuromento/Lily-Cybersecurity-7B-v0.2-Q8_0-GGUF
+Lily model on Hugging Face — https://huggingface.co/Nekuromento/Lily-Cybersecurity-7B-v0.2-Q8_0-GGUF
+
+Tailwind CSS — https://tailwindcss.com/
 
 Framer Motion — https://www.framer.com/motion/
 
-Next.js — https://nextjs.org/
+Axios — https://axios-http.com/
 
-Please consult each upstream project's license before distribution.
+License & next steps
 
-License
+Add a LICENSE file to the repository (MIT recommended unless your organization requires otherwise).
 
-Add your chosen license file (e.g., LICENSE MIT or your org's license). This repo does not ship third-party model files — users must download GGUF models per the owner’s license.
+Suggested next steps:
 
-Example: Common commands summary
+Add CI (GitHub Actions) to run lint, tests, and build the frontend.
 
-Start ES & Redis:
+Add a CONTRIBUTING.md with contributor workflow and PR template.
 
-# from backend/
-docker compose -f docker-compose.yml up -d
+Add an EXPORT of your ES mapping or seed scripts to populate dev data.
 
+Produce the LaTeX report (20+ pages) and a PDF for project submission.
 
-Install backend deps (manual):
+Appendices
+A — Example zeroday_service.py (clean & copy-paste ready)
+# backend/app/services/zeroday_service.py
+import re
+from typing import List, Dict, Optional
+from app.core.elasticsearch_client import es  # AsyncElasticsearch client
 
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+class ZeroDayService:
+    def __init__(self, index_name: str = "zeroday"):
+        self.index_name = index_name
 
+    async def search_zeroday(self, query: Optional[str]) -> List[Dict]:
+        """
+        If query is None or empty -> return all docs (size limited)
+        If query matches ZDI-CAN-<digits> -> exact match on zero_day_id
+        Otherwise -> multi_match on category and impact
+        """
+        if not query:
+            body = {"query": {"match_all": {}}, "size": 100}
+        else:
+            must_clauses = []
+            if re.fullmatch(r"ZDI-CAN-\d+", query):
+                must_clauses.append({"match": {"zero_day_id": query}})
+            else:
+                must_clauses.append({
+                    "multi_match": {
+                        "query": query,
+                        "fields": ["category", "impact"],
+                        "operator": "and"
+                    }
+                })
+            body = {"query": {"bool": {"must": must_clauses}}, "size": 100}
 
-Start frontend:
+        response = await es.search(index=self.index_name, body=body)
+        return [hit["_source"] for hit in response["hits"]["hits"]]
 
-# from frontend/
-npm install
-npm run dev
+B — Example zeroday router (copy-paste ready)
+# backend/app/api/zeroday.py
+from fastapi import APIRouter, Query
+from typing import Optional
+from app.services.zeroday_service import ZeroDayService
 
+router = APIRouter()
 
-Build and run llama server (optional):
+@router.get("/search")
+async def search_zerodays(query: Optional[str] = Query(None, description="Zero-Day ID or keyword")):
+    service = ZeroDayService()
+    results = await service.search_zeroday(query=query)
+    return {"count": len(results), "results": results}
 
-# build llama.cpp first (see instructions)
-cd ~/CTI/backend/models/llama.cpp/build/bin
-./llama-server -m ~/CTI/backend/models/lilly/lily-cybersecurity-7b-v0.2-q8_0.gguf --host 0.0.0.0 --port 8080 --ctx-size 4096 --n-gpu-layers 0
+C — Frontend snippet for Zero-Day list (example pattern)
 
-Diagrams (Mermaid supported on GitHub)
+Ensure you use response.data.results when reading backend responses:
 
-You can render quick architecture diagrams on GitHub using Mermaid. Add this to markdown:
-
-graph TD
-  A[Frontend (Next.js)] -->|REST / Axios| B(Backend: FastAPI)
-  B -->|Queries| C[Elasticsearch 8.13]
-  B -->|Cache| D[Redis]
-  B -->|External APIs| E[OTX / VirusTotal]
-  B -->|Optional| F[Lilly LLM (llama-server)]
-  F -->|uses| G[GGUF Model (Lily-Cybersecurity)]
-
-Final notes
-
-This README aims to be a complete guide to set up, run, and extend your CTI project.
-
-Add any organization-specific secrets and credentials into .env or use environment-specific deployment procedure for production.
-
-If you want, I can also:
-
-generate a polished CONTRIBUTING.md, CODE_OF_CONDUCT.md, or LICENSE.
-
-convert this README to a multi-file docs/ site.
-
-create a short bash installer for frontend (Next.js) as well.
+// in frontend page:
+const res = await api.searchZeroDay(query);
+const items = res.results || res; // safe fallback
