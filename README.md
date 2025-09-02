@@ -7,6 +7,7 @@
 **Repository:** https://github.com/Mohamed-Aziz-Aguir/CapGemini-CTI
 
 **Primary contact:** Mohamed Aziz Aguir — `mohamedaziz.aguir@outlook.com`   
+                     Yahya Kaddour — 'yahyakaddour5@gmail.com'
 
 **Project timeline:** Start: `2025-06-23` — End: *(today / ongoing)*
 
@@ -147,7 +148,7 @@ OTX_API_KEY=
 LILLY_SERVER_URL=http://localhost:8080
 
 PROJECT_AUTHORS="Mohamed Aziz Aguir & Yahya Kaddour"
-PROJECT_CONTACT="mohamedaziz.aguir@outlook.com"
+PROJECT_CONTACT="mohamedaziz.aguir@outlook.com" & "yahyakaddour5@gmail.com"
 PROJECT_SUPERVISOR="Mohamed Amine Boussaid"
 ```
 
