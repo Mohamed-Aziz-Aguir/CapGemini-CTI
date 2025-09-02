@@ -286,6 +286,7 @@ cd backend/models/llama.cpp/build/bin
 - Stop: `docker compose down`
 - Start backend: `uvicorn app.main:app --reload`
 - Show logs: `tail -f uvicorn.log`
+- Important note: 'run-asrg.sh' and 'zeroday.py' in the 'backend/app/cron' folder must added as a cron job with the command 'crontab -e'
 
 ---
 
