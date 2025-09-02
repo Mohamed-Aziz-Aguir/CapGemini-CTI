@@ -6,7 +6,7 @@
 **Supervisor:** Mohamed Amine Boussaid  
 **Repository:** https://github.com/Mohamed-Aziz-Aguir/CapGemini-CTI
 
-**Primary contact:** Mohamed Aziz Aguir — `mohamedaziz.aguir@outlook.com` — `+216 93 236 576`  
+**Primary contact:** Mohamed Aziz Aguir — `mohamedaziz.aguir@outlook.com`   
 
 **Project timeline:** Start: `2025-06-23` — End: *(today / ongoing)*
 
