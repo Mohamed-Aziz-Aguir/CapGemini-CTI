@@ -309,7 +309,7 @@ cd backend/models/llama.cpp/build/bin
 - Stop: `docker compose down`
 - Start backend: `uvicorn app.main:app --reload`
 - Show logs: `tail -f uvicorn.log`
-- Important note: `run-asrg.sh` and `zeroday.py` in the `backend/app/cron` folder must be added as a cron job with the command `crontab -e`
+- Important note: `run-asrg.sh`, `zeroday.py` and `news_cron.py` in the `backend/app/cron` folder must be added as a cron job with the command `crontab -e`
 
 ---
 
@@ -396,6 +396,12 @@ async def search_zerodays(query: Optional[str] = Query(None, description="Zero-D
 ---
 
 ## License & next steps
+
+Copyright (c) 2025 Capgemini. All rights reserved.
+
+This software is the property of Capgemini. Unauthorized use, reproduction, modification, or distribution of this software, or any portion of it, without the express written permission of Capgemini is strictly prohibited.
+
+For inquiries regarding usage or licensing, please contact capgemini.com.
 
 Add a `LICENSE` file (MIT recommended). Suggested next steps: add CI, export ES mappings, create seed/index scripts, produce the LaTeX report (20+ pages).
 
