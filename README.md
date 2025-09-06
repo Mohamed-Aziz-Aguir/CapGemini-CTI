@@ -66,36 +66,51 @@ Primary tech used in the project:
 ```
 /backend
   /app
-    main.py
     /api
       ioc.py
-      zeroday.py
+      cve_router.py
+      zeroday_router.py
       threat_catalog.py
       search.py
       lilly.py
-      news.py
+      news_router.py
     /services
       zeroday_service.py
       cve_service.py
       otx_service.py
       virustotal_service.py
       lilly_service.py
+      asrg_vuldb_service.py
+      news_service.py
+      threat_catalog_service.py
     /core
       elasticsearch_client.py
       config.py
     /models
-      /lilly/
-      /llama.cpp/
+      asrg_models.py
+      cve_model.py
+      ioc_models.py
+      news_model.py
+      zeroday_model.py
+  /threat catalog
   requirements.txt
-  setup_backend_fixed.sh
   docker-compose.yml
-  .env.example
+  main.py
+  .env
 /frontend
   /components
   /pages or /app
-  lib/api.ts
+  /lib
+  /public
+  /styles
   package.json
   tailwind.config.js
+  tsconfig.json
+  postcss.config.mjs
+  pnpm-lock.yaml
+  components.json
+  next.config.mjs
+  package-lock.json
 README.md
 LICENSE
 ```
@@ -136,9 +151,9 @@ DEBUG=true
 HOST=0.0.0.0
 PORT=8000
 
-ES_HOST=http://localhost:9200
-ES_USERNAME=
-ES_PASSWORD=
+elastic_host=http://localhost:9200
+elastic_USERNAME=
+elastic_PASSWORD=
 
 REDIS_URL=redis://localhost:6379/0
 
@@ -204,6 +219,13 @@ Key routers included in `app/main.py` (examples):
 ---
 
 ## Elasticsearch indices & data model
+
+- To populate your elasticsearch you can run these files in the backend/app/cron:
+  - news_cron.py (for latest news).
+  - asrg_cron_job.py (for latest automotive cves).
+  - zeroday.py (for the zero days).
+  - for the threat catalogs you can add them manually with the script addfiles.py and you can see the indices names below.
+  - For the iocs you just need to use or ioc analyser in the platform.
 
 Indices used (exact names preserved):
 
