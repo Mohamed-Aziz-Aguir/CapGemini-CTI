@@ -126,7 +126,7 @@ Create `backend/docker-compose.yml` (or use the provided) to run ES & Redis. Exa
 Start:
 
 ```bash
-docker compose up -d
+docker-compose up -d  (or  docker compose up -d if you are using docker v2) 
 # wait until Elasticsearch healthy:
 curl -sSf http://localhost:9200/
 ```
