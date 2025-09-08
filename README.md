@@ -235,7 +235,7 @@ Indices used (exact names preserved):
 - initial_access
 - collection
 - command_and_control
-- defense_ecasion
+- defense_evasion
 - credential_access
 - discovery
 - persistence
