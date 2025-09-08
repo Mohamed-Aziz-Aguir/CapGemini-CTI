@@ -46,7 +46,7 @@ const categories = [
   "initial_access",
   "collection",
   "command_and_control",
-  "defense_evasion", // typo kept to match ES
+  "defense_evasion", 
   "credential_access",
   "discovery",
   "persistence",
