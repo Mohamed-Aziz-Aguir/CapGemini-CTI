@@ -23,5 +23,5 @@ app.include_router(zeroday_router.router, prefix="/zeroday", tags=["Zero-Day"])
 app.include_router(threat_catalog.router, prefix="/threat-catalog", tags=["Threat Catalog"])
 app.include_router(search.router, prefix="/api/search", tags=["Search & Browse"])
 
-# Serve static HTML/js
-app.mount("/static", StaticFiles(directory="app/static"), name="static")
+
+
