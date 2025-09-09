@@ -313,12 +313,6 @@ cd backend/models/llama.cpp/build/bin
 
 ---
 
-## Architecture diagrams (Mermaid)
-
-High-level and sequence diagram snippets are included in the repo README for use with GitHub's Mermaid support.
-
----
-
 ## Troubleshooting & FAQ
 
 - If frontend returns 404 on `/zeroday/search`, ensure the frontend call uses `params: { query }` and backend router is mounted at `/zeroday`.
