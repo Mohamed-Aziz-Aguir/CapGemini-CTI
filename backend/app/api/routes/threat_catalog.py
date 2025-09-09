@@ -12,7 +12,7 @@ VALID_CATEGORIES = {
     "initial_access",
     "collection",
     "command_and_control",
-    "defense_ecasion",   # typo kept because it exists in ES
+    "defense_evasion",   
     "credential_access",
     "discovery",
     "persistence",
