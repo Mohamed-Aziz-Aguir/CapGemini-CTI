@@ -305,8 +305,8 @@ cd backend/models/llama.cpp/build/bin
 
 ## Dev scripts & convenience commands
 
-- Start ES+Redis: `docker-compose up -d (or docker compose up -d)`
-- Stop: `docker-compose down (or docker compose down -d)`
+- Start ES+Redis: `docker-compose up -d (or docker compose up -d if you are using docker v2)`
+- Stop: `docker-compose down (or docker compose down -d if you are using docker v2)`
 - Start backend: `uvicorn app.main:app --reload`
 - Show logs: `tail -f uvicorn.log`
 - Important note: `run-asrg.sh`, `zeroday.py` and `news_cron.py` in the `backend/app/cron` folder must be added as a cron job with the command `crontab -e`
