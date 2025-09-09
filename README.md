@@ -172,7 +172,7 @@ PROJECT_SUPERVISOR="Mohamed Amine Boussaid"
 Activate venv and run:
 
 ```bash
-source .venv/bin/activate
+source venv/bin/activate
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
