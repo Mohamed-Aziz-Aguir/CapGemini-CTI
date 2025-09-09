@@ -28,7 +28,7 @@ kombu==5.5.4
 llama_cpp_python==0.3.16
 MarkupSafe==3.0.2
 multidict==6.6.4
-numpy==2.3.2
+numpy==2.2.6
 packaging==25.0
 playwright==1.53.0
 prompt_toolkit==3.0.51
