@@ -397,8 +397,6 @@ This software is the property of Capgemini. Unauthorized use, reproduction, modi
 
 For inquiries regarding usage or licensing, please contact capgemini.com.
 
-Add a `LICENSE` file (MIT recommended). Suggested next steps: add CI, export ES mappings, create seed/index scripts, produce the LaTeX report (20+ pages).
-
 ---
 
 *Generated for Mohamed Aziz Aguir & Yahya Kaddour — Capgemini / ESPRIT project.*
