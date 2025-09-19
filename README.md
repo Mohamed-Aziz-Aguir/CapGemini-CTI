@@ -224,7 +224,8 @@ Key routers included in `app/main.py` (examples):
   - news_cron.py (for latest news).
   - asrg_cron_job.py (for latest automotive cves).
   - zeroday.py (for the zero days).
-  - for the threat catalogs you can add them manually with the script addfiles.py and you can see the indices names below.
+  - for the threat catalogs you can add them manually with the script addfiles.py and you can see the indices names below
+     (for example adding tampering to your elasticsearch inside your addfiles.py change the path in  `open("threat catalog/tampering.json", "r")`  ////// and change the index in `es.index(index="tampering", document=data)`  with the exact corresponding name from the list given below.)
   - For the iocs you just need to use or ioc analyser in the platform.
 
 Indices used (exact names preserved):
