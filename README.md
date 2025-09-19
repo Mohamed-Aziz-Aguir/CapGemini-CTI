@@ -9,7 +9,7 @@
 **Primary contact:** Mohamed Aziz Aguir — `mohamedaziz.aguir@outlook.com`   
                      Yahya Kaddour — `yahyakaddour5@gmail.com`
 
-**Project timeline:** Start: `2025-06-23` — End: *(today / ongoing)*
+**Project timeline:** Start: `2025-06-23` — End: `2025-09-1`
 
 ---
 
