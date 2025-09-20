@@ -25,11 +25,10 @@
 8. Elasticsearch indices & data model
 9. Optional: Local LLM (Lilly) using `llama.cpp` (instructions)
 10. Dev scripts & convenience commands
-11. Architecture diagrams (Mermaid)
-12. Troubleshooting & FAQ
-13. Credits & External Resources
-14. License & Next steps
-15. Appendices (examples & snippets)
+11.Troubleshooting & FAQ
+12. Credits & External Resources
+13. Appendices
+14. License
 
 ---
 
