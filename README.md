@@ -390,7 +390,7 @@ async def search_zerodays(query: Optional[str] = Query(None, description="Zero-D
 
 ---
 
-## License & next steps
+## License 
 
 Copyright (c) 2025 Capgemini. All rights reserved.
 
