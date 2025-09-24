@@ -144,26 +144,15 @@ pip install -r requirements.txt
 
 Create `.env` inside `backend/` with values like:
 
-```
-APP_ENV=development
-DEBUG=true
-HOST=0.0.0.0
-PORT=8000
-
+# Required by Settings
 elastic_host=http://localhost:9200
-elastic_USERNAME=
-elastic_PASSWORD=
-
-REDIS_URL=redis://localhost:6379/0
-
-virustotal_api_key=(required fo the project)
-otx_api_key=(required fo the project)
-
+redis_host=localhost
+virustotal_api_key=YOUR_VIRUSTOTAL_API_KEY
+otx_api_key=YOUR_OTX_API_KEY
 LILLY_SERVER_URL=http://localhost:8080
 
-PROJECT_AUTHORS="Mohamed Aziz Aguir & Yahya Kaddour"
-PROJECT_CONTACT="mohamedaziz.aguir@outlook.com" & "yahyakaddour5@gmail.com"
-PROJECT_SUPERVISOR="Mohamed Amine Boussaid"
+# Optional: LLAMA/Lilly constants can remain in code, no need in .env
+
 ```
 
 ### 4. Start Backend (development)
