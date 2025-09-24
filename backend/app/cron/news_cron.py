@@ -1,76 +1,59 @@
+import httpx
 import asyncio
-from playwright.async_api import async_playwright
+import xml.etree.ElementTree as ET
 from app.core.elasticsearch_client import es
-import json
+import logging
 
-INDEX_NAME = "zeroday"
+logger = logging.getLogger(__name__)
 
-
-async def scrape_vicone_data():
-    all_data = []
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-        page = await browser.new_page()
-
-        await page.goto("https://vicone.com/automotive-zero-day-vulnerabilities", timeout=60000)
-        await page.wait_for_selector("table")
-
-        try:
-            await page.wait_for_selector("#dt-length-0", state="visible", timeout=10000)
-            await page.select_option("#dt-length-0", value="100")
-            await page.wait_for_selector("table tbody tr", state="visible", timeout=5000)
-        except Exception as e:
-            print(f"Failed to set entries per page to 100: {e}")
-
-        print("Scraping data...")
-        rows = await page.query_selector_all("table tbody tr")
-
-        for row in rows:
-            cols = await row.query_selector_all("td")
-            if len(cols) == 4:
-                item = {
-                    "zero_day_id": (await cols[0].inner_text()).strip(),
-                    "cve": (await cols[1].inner_text()).strip(),
-                    "category": (await cols[2].inner_text()).strip(),
-                    "impact": (await cols[3].inner_text()).strip()
-                }
-                all_data.append(item)
-
-        await browser.close()
-    return all_data
+NEWS_FEED_URL = "https://upstream.auto/feed/"
+INDEX_NAME = "newsupstream"
 
 
-async def index_to_es(data):
-    # Delete old index
-    if await es.indices.exists(index=INDEX_NAME):
-        await es.indices.delete(index=INDEX_NAME)
+async def fetch_and_store_news():
+    try:
+        # Delete old index if it exists
+        if await es.indices.exists(index=INDEX_NAME):
+            await es.indices.delete(index=INDEX_NAME)
+            logger.info(f"🗑️ Deleted old index '{INDEX_NAME}'")
 
-    await es.indices.create(
-        index=INDEX_NAME,
-        body={
-            "mappings": {
-                "properties": {
-                    "zero_day_id": {"type": "keyword"},
-                    "cve": {"type": "keyword"},
-                    "category": {"type": "text"},
-                    "impact": {"type": "text"}
-                }
+        # Create a fresh index
+        await es.indices.create(index=INDEX_NAME)
+        logger.info(f"📦 Created new index '{INDEX_NAME}'")
+
+        # Fetch feed
+        async with httpx.AsyncClient() as client:
+            response = await client.get(NEWS_FEED_URL)
+            response.raise_for_status()
+
+        root = ET.fromstring(response.text)
+        channel = root.find("channel")
+        items = channel.findall("item")
+
+        # Store each news item
+        for i, item in enumerate(items):
+            news_doc = {
+                "title": item.find("title").text,
+                "link": item.find("link").text,
+                "description": item.find("description").text if item.find("description") is not None else None,
+                "pubDate": item.find("pubDate").text if item.find("pubDate") is not None else None,
+                "guid": item.find("guid").text if item.find("guid") is not None else None,
             }
-        }
-    )
 
-    for item in data:
-        await es.index(index=INDEX_NAME, document=item)
+            # Use guid or fallback to counter as ID
+            doc_id = news_doc["guid"] or str(i)
 
+            await es.index(index=INDEX_NAME, id=doc_id, document=news_doc)
 
-async def main():
-    data = await scrape_vicone_data()
-    print(f"Scraped {len(data)} records")
-    await index_to_es(data)
-    print(f"Indexed {len(data)} records into '{INDEX_NAME}'")
-    await es.close()
+        logger.info(f"✅ Fetched and stored {len(items)} news items into '{INDEX_NAME}'")
 
+    except Exception as e:
+        logger.error(f"❌ Error fetching/storing news: {e}")
+
+    finally:
+        # Always close async client to avoid warnings
+        await es.close()
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(fetch_and_store_news())
