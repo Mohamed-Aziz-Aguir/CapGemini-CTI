@@ -156,8 +156,8 @@ elastic_PASSWORD=
 
 REDIS_URL=redis://localhost:6379/0
 
-VT_API_KEY=
-OTX_API_KEY=
+virustotal_api_key=(required fo the project)
+otx_api_key=(required fo the project)
 
 LILLY_SERVER_URL=http://localhost:8080
 
