@@ -1,56 +1,51 @@
-from playwright.sync_api import sync_playwright
+import asyncio
+from playwright.async_api import async_playwright
 from app.core.elasticsearch_client import es
 import json
 
 INDEX_NAME = "zeroday"
 
-def scrape_vicone_zerodays():
+
+async def scrape_vicone_data():
     all_data = []
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        page = await browser.new_page()
 
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
+        await page.goto("https://vicone.com/automotive-zero-day-vulnerabilities", timeout=60000)
+        await page.wait_for_selector("table")
 
-        page.goto("https://vicone.com/automotive-zero-day-vulnerabilities", timeout=60000)
-        page.wait_for_selector("table")
-
-        # Set entries per page to 100
         try:
-            page.wait_for_selector("#dt-length-0", state="visible", timeout=10000)
-            page.select_option("#dt-length-0", value="100")
-            page.wait_for_selector("table tbody tr", state="visible", timeout=5000)
+            await page.wait_for_selector("#dt-length-0", state="visible", timeout=10000)
+            await page.select_option("#dt-length-0", value="100")
+            await page.wait_for_selector("table tbody tr", state="visible", timeout=5000)
         except Exception as e:
             print(f"Failed to set entries per page to 100: {e}")
 
         print("Scraping data...")
-        page.wait_for_selector("table tbody tr", state="visible")
-        rows = page.query_selector_all("table tbody tr")
+        rows = await page.query_selector_all("table tbody tr")
 
         for row in rows:
-            cols = row.query_selector_all("td")
+            cols = await row.query_selector_all("td")
             if len(cols) == 4:
                 item = {
-                    "zero_day_id": cols[0].inner_text().strip(),
-                    "cve": cols[1].inner_text().strip(),
-                    "category": cols[2].inner_text().strip(),
-                    "impact": cols[3].inner_text().strip()
+                    "zero_day_id": (await cols[0].inner_text()).strip(),
+                    "cve": (await cols[1].inner_text()).strip(),
+                    "category": (await cols[2].inner_text()).strip(),
+                    "impact": (await cols[3].inner_text()).strip()
                 }
                 all_data.append(item)
 
-        browser.close()
+        await browser.close()
+    return all_data
 
-    # Save backup locally
-    with open("vicone_zero_day_vulns.json", "w", encoding="utf-8") as f:
-        json.dump(all_data, f, indent=2, ensure_ascii=False)
 
+async def index_to_es(data):
     # Delete old index
-    print(f"Deleting old index '{INDEX_NAME}' (if exists)...")
-    if es.indices.exists(index=INDEX_NAME):
-        es.indices.delete(index=INDEX_NAME)
+    if await es.indices.exists(index=INDEX_NAME):
+        await es.indices.delete(index=INDEX_NAME)
 
-    # Create new index
-    print(f"Creating new index '{INDEX_NAME}'...")
-    es.indices.create(
+    await es.indices.create(
         index=INDEX_NAME,
         body={
             "mappings": {
@@ -64,12 +59,18 @@ def scrape_vicone_zerodays():
         }
     )
 
-    # Insert fresh data
-    print("Indexing new data...")
-    for item in all_data:
-        es.index(index=INDEX_NAME, document=item)
+    for item in data:
+        await es.index(index=INDEX_NAME, document=item)
 
-    print(f"Scraped and indexed {len(all_data)} entries into Elasticsearch index '{INDEX_NAME}'.")
+
+async def main():
+    data = await scrape_vicone_data()
+    print(f"Scraped {len(data)} records")
+    await index_to_es(data)
+    print(f"Indexed {len(data)} records into '{INDEX_NAME}'")
+    await es.close()
+
+
 
 if __name__ == "__main__":
-    scrape_vicone_zerodays()
+    asyncio.run(main())
